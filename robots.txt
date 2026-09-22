@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Host: https://www.muriel-calas.fr
+Sitemap: https://www.muriel-calas.fr/sitemap.xml
