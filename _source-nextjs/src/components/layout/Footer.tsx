@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LogoMark, Wordmark } from "@/components/ui/Logo";
 import { Clock, Phone, Pin, Video } from "@/components/ui/icons";
-import { footerNav, site } from "@/content/site";
+import { coverage, footerNav, site } from "@/content/site";
 
 function Column({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -26,8 +26,8 @@ export function Footer() {
           Apprendre à maîtriser <span className="accent-italic text-sky">ce qui dépend</span> de vous.
         </p>
         <p className="max-w-sm text-muted-dark md:col-span-4 md:col-start-9 md:justify-self-end md:text-right">
-          Préparation mentale pour sportifs, étudiants et encadrants, à Mirepeisset, dans le Narbonnais, et à
-          distance.
+          Préparation mentale pour sportifs, étudiants et encadrants. En Occitanie et en visio, partout en
+          France.
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export function Footer() {
             <li className="flex gap-3">
               <Pin size={18} className="mt-1 shrink-0 text-clay-light" />
               <span>
-                {site.location.locality} · Narbonnais ({site.location.department})
+                {coverage.base} · Déplacements en {coverage.region}
               </span>
             </li>
             <li className="flex gap-3">
@@ -99,15 +99,13 @@ export function Footer() {
 
         <div className="lg:col-span-3">
           <Column title="Zone d’intervention">
-            <ul className="grid gap-2 text-[0.98rem] text-paper/85">
-              <li className="min-h-8">Mirepeisset</li>
-              <li className="min-h-8">Narbonne</li>
-              <li className="min-h-8">Le Narbonnais</li>
-              <li className="flex min-h-8 items-center gap-2">
-                <Video size={16} className="text-clay-light" />
-                Présentiel &amp; visio
-              </li>
-            </ul>
+            <p className="text-[0.98rem] leading-relaxed text-paper/85">
+              {coverage.region} : {coverage.cities.join(", ")}.
+            </p>
+            <p className="mt-3 flex items-center gap-2 text-[0.98rem] text-paper/85">
+              <Video size={16} className="shrink-0 text-clay-light" />
+              {coverage.remote}
+            </p>
           </Column>
         </div>
       </div>
@@ -121,7 +119,7 @@ export function Footer() {
       <div className="wrap">
         <div className="flex flex-col gap-4 border-t border-line-dark py-7 text-sm text-muted-dark md:flex-row md:items-center md:justify-between">
           <p>
-            © {year} Muriel Calas — Préparatrice mentale à Mirepeisset, près de Narbonne
+            © {year} Muriel Calas — Préparatrice mentale en Occitanie et en visio
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {footerNav.legal.map((l) => (

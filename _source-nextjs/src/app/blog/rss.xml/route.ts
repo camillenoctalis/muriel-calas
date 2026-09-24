@@ -25,8 +25,7 @@ export function GET() {
 <rss version="2.0">
   <channel>
     <title>Conseils en préparation mentale — Muriel Calas</title>
-    <link>${site.url}/blog</link>
-    <description>Les conseils de Muriel Calas, préparatrice mentale à Mirepeisset, près de Narbonne.</description>
+    <link>${site.url}/blog</link>    <description>Les conseils de Muriel Calas, préparatrice mentale en Occitanie et en visio.</description>
     <language>fr-FR</language>${items}
   </channel>
 </rss>`;

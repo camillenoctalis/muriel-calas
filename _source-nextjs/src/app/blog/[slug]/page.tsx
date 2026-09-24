@@ -118,12 +118,12 @@ export default async function ArticlePage(props: PageProps<"/blog/[slug]">) {
 
             {/* Appel à l’action de fin d’article */}
             <aside className="on-dark mt-16 rounded-[var(--radius-card)] bg-ink p-7 text-paper md:p-10" aria-labelledby="article-cta">
-              <p className="eyebrow text-clay-light">Préparation mentale · Narbonnais & à distance</p>
+              <p className="eyebrow text-clay-light">Préparation mentale · Occitanie & visio</p>
               <h2 id="article-cta" className="display-sm mt-4">
                 {post.cta?.title ?? "Vous souhaitez aller plus loin ?"}
               </h2>
               <p className="mt-4 text-muted-dark">
-                {post.cta?.text ?? "J’accompagne les sportifs, étudiants et encadrants dans le Narbonnais et à distance."}
+                {post.cta?.text ?? "J’accompagne les sportifs, étudiants et encadrants en Occitanie et en visio."}
               </p>
               {post.cta?.points && (
                 <ul className="mt-5 flex flex-wrap gap-2">
@@ -150,8 +150,7 @@ export default async function ArticlePage(props: PageProps<"/blog/[slug]">) {
               </span>
               <div>
                 <p className="font-serif text-xl text-ink">Muriel Calas</p>
-                <p className="mt-1 text-[0.97rem] text-muted">
-                  Préparatrice mentale à Mirepeisset, près de Narbonne. Ancienne volleyeuse et masseur-kinésithérapeute
+                <p className="mt-1 text-[0.97rem] text-muted">                  Préparatrice mentale en Occitanie et en visio. Ancienne volleyeuse et masseur-kinésithérapeute
                   depuis plus de 25 ans, formée à la préparation mentale par Christian Ramos.
                 </p>
                 <ArrowLink href="/a-propos" className="mt-3 text-sm text-ink">

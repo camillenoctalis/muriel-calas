@@ -12,8 +12,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { offers, formatPrice } from "@/content/offers";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Accompagnement en préparation mentale à Narbonne | Muriel Calas",
+export const metadata = pageMetadata({  title: "Accompagnement en préparation mentale | Occitanie & visio",
   description:
     "Comment se déroule un accompagnement en préparation mentale avec Muriel Calas : premier appel, objectifs, outils concrets, séances de 45 min à 1 h, suivi, présentiel à Mirepeisset ou visio.",
   path: "/accompagnement",
@@ -21,7 +20,7 @@ export const metadata = pageMetadata({
 
 const practical = [
   { icon: Clock, title: "Durée", text: "Une séance dure 1 heure." },
-  { icon: Video, title: "Présentiel ou visio", text: "À Mirepeisset et dans le Narbonnais, en déplacement en Occitanie, ou à distance en visio." },
+  { icon: Video, title: "Présentiel ou visio", text: "En déplacement en Occitanie (Toulouse, Montpellier, Castres, Font-Romeu, Narbonne) ou en visio, partout en France." },
   { icon: Check, title: "Suivi", text: "Un rendez-vous de suivi est calé entre chaque séance, par téléphone ou en visio, pour débriefer." },
   { icon: Lock, title: "Confidentialité", text: "Les échanges se déroulent dans un cadre bienveillant, respectueux et confidentiel." },
   { icon: Calendar, title: "Prise de rendez-vous", text: "Réservation en ligne, selon vos disponibilités, ou par téléphone." },

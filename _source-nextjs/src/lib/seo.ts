@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site, towns } from "@/content/site";
+import { coverage, site } from "@/content/site";
 import { offers } from "@/content/offers";
 import type { FaqItem } from "@/content/faq";
 
@@ -18,8 +18,7 @@ type PageSeo = {
 /** Métadonnées complètes d’une page : title, description, canonical, Open Graph, Twitter */
 export function pageMetadata({ title, description, path, image, type = "website", publishedTime, noIndex }: PageSeo): Metadata {
   const img = image ?? {
-    url: DEFAULT_OG_IMAGE,
-    alt: "Muriel Calas, préparatrice mentale dans le Narbonnais",
+    url: DEFAULT_OG_IMAGE,    alt: "Muriel Calas, préparatrice mentale en Occitanie",
     width: 1200,
     height: 630,
   };
@@ -80,10 +79,10 @@ export function businessJsonLd() {
       "@type": "GeoCoordinates",
       latitude: site.location.geo.latitude,
       longitude: site.location.geo.longitude,
-    },
-    areaServed: [
-      ...towns.map((t) => ({ "@type": "City", name: t.name.replace("’", "'") })),
-      { "@type": "AdministrativeArea", name: "Narbonnais" },
+    },    areaServed: [
+      { "@type": "AdministrativeArea", name: "Occitanie" },
+      { "@type": "Country", name: "France" },
+      ...coverage.cities.map((name) => ({ "@type": "City", name })),
     ],
     openingHoursSpecification: site.hours.schema.map((h) => ({
       "@type": "OpeningHoursSpecification",
@@ -114,8 +113,7 @@ export function businessJsonLd() {
         itemOffered: {
           "@type": "Service",
           name: `Préparation mentale — ${o.name}`,
-          serviceType: "Préparation mentale",
-          areaServed: "Narbonnais et à distance",
+          serviceType: "Préparation mentale",          areaServed: "Occitanie et à distance, partout en France",
         },
       })),
     },
@@ -129,8 +127,7 @@ export function personJsonLd() {
     "@id": ids.person,
     name: "Muriel Calas",
     jobTitle: "Préparatrice mentale",
-    description:
-      "Ancienne joueuse de volley-ball, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale formée par Christian Ramos. Accompagne sportifs, étudiants et encadrants dans le Narbonnais et à distance.",
+    description:      "Ancienne joueuse de volley-ball, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale formée par Christian Ramos. Accompagne sportifs, étudiants et encadrants en Occitanie et en visio, partout en France.",
     image: abs("/images/muriel-calas-preparatrice-mentale.jpg"),
     url: abs("/a-propos"),
     telephone: site.phone.international,

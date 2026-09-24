@@ -31,8 +31,7 @@ export function Hero() {
             <span className="hidden lg:inline">Préparatrice mentale</span>
             <span aria-hidden="true" className="hidden text-sand-deep lg:inline">
               /
-            </span>
-            Mirepeisset · Narbonne · À distance
+            </span>            Occitanie · Visio partout en France
           </p>
 
           <h1 className="display-xl mt-7 max-w-[13ch] text-ink lg:max-w-none">

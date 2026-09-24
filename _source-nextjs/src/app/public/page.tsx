@@ -8,10 +8,8 @@ import { audiences } from "@/content/audiences";
 import { pageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/cn";
 
-export const metadata = pageMetadata({
-  title: "Préparation mentale sportifs, étudiants, coachs | Narbonne",
-  description:
-    "Préparation mentale à Narbonne et Mirepeisset pour sportifs amateurs et confirmés, collégiens, lycéens, étudiants, entraîneurs, éducateurs et arbitres : stress, confiance, concentration.",
+export const metadata = pageMetadata({  title: "Préparation mentale sportifs, étudiants, coachs | Occitanie",
+  description:    "Préparation mentale en Occitanie et en visio pour sportifs amateurs et confirmés, sportifs blessés, collégiens, lycéens, étudiants, entraîneurs, éducateurs et arbitres : stress, confiance, concentration.",
   path: "/public",
 });
 

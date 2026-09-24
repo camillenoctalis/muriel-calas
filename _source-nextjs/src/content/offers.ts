@@ -67,18 +67,27 @@ export const offers: Offer[] = [
   },
 ];
 
-/** Interventions collectives : tarif établi au cas par cas, sur devis. */
-export const workshops = {
-  title: "Ateliers & formations",
-  audience: "Clubs, équipes, staffs et encadrants",
-  items: [
-    "Ateliers de préparation mentale pour sportives et sportifs",
-    "Formation des entraîneurs et encadrants au cycle menstruel dans le sport féminin",
-    "Interventions sur mesure, en club ou en centre de formation",
-  ],
-  price: "Sur devis",
-};
-
+/** Demandes qui ne rentrent pas dans les trois formules : tarif établi au cas par cas. */
+export const quoteRequests = [
+  {
+    title: "Ateliers & formations",
+    audience: "Clubs, équipes, staffs et encadrants",
+    items: [
+      "Ateliers de préparation mentale pour sportives et sportifs",
+      "Formation des entraîneurs au cycle menstruel dans le sport féminin",
+      "Interventions en club ou en centre de formation",
+    ],
+  },
+  {
+    title: "Demande particulière",
+    audience: "Situations spécifiques",
+    items: [
+      "Une situation qui sort du cadre des trois formules",
+      "Un accompagnement long, une échéance ou un format inhabituel",
+      "Un accompagnement à construire à plusieurs (sportif, famille, encadrant)",
+    ],
+  },
+];
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
 

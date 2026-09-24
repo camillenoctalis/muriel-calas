@@ -1,15 +1,15 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Pricing } from "@/components/sections/Pricing";
-import { workshops } from "@/content/offers";
-import { ArrowLink, BookingButton } from "@/components/ui/Button";
-import { Eyebrow } from "@/components/ui/Typography";
+import { quoteRequests } from "@/content/offers";
+import { BookingButton, ButtonLink } from "@/components/ui/Button";
+import { Phone } from "@/components/ui/icons";
+import { quoteHref, quoteIsExternal, site } from "@/content/site";
+import { delay, Eyebrow } from "@/components/ui/Typography";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Tarifs préparation mentale à Narbonne | Muriel Calas",
-  description:
-    "Séance découverte 80 €, suivi 5 séances 375 €, suivi 10 séances 720 € : les tarifs de préparation mentale de Muriel Calas, en présentiel à Mirepeisset (Narbonnais) ou en visio.",
+export const metadata = pageMetadata({  title: "Tarifs préparation mentale | Occitanie & visio | Muriel Calas",
+  description:    "Séance découverte 80 €, suivi 5 séances 375 €, suivi 10 séances 720 € : les tarifs de préparation mentale de Muriel Calas, en Occitanie ou en visio. Ateliers et formations sur devis.",
   path: "/tarifs",
 });
 
@@ -21,9 +21,8 @@ export default function TarifsPage() {
         eyebrow="Tarifs"
         title={["Des formules claires,", <em key="e" className="accent-italic text-navy">à votre rythme.</em>]}
         intro={
-          <p>
-            Séances de 45 min à 1 h, à Mirepeisset ou en visio. Débloquer, comprendre, puis gagner en autonomie :
-            choisissez la formule qui correspond à votre objectif.
+          <p>            Séances d’une heure, en Occitanie ou en visio partout en France. Débloquer, comprendre, puis gagner
+            en autonomie : choisissez la formule qui correspond à votre objectif.
           </p>
         }
       />
@@ -40,29 +39,48 @@ export default function TarifsPage() {
             <BookingButton className="self-start md:self-auto" />
           </div>
         </div>
-      </section>      <section className="section-y" aria-labelledby="ateliers-titre">
-        <div className="wrap grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-4">
-            <Eyebrow>{workshops.audience}</Eyebrow>
-            <h2 id="ateliers-titre" className="display-md mt-5 text-ink" data-reveal>
-              {workshops.title}
-            </h2>
-            <p className="numeral mt-4 text-xl text-clay" data-reveal>
-              {workshops.price}
+      </section>
+
+      <section className="section-y" aria-labelledby="devis-titre">
+        <div className="wrap">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7">
+              <Eyebrow>Sur devis</Eyebrow>
+              <h2 id="devis-titre" className="display-md mt-5 text-ink" data-reveal>
+                Chaque situation est différente.
+              </h2>
+            </div>
+            <p className="text-muted lg:col-span-4 lg:col-start-9" data-reveal>
+              Certaines demandes ne rentrent pas dans les formules ci-dessus. Écrivez-moi : je vous réponds avec
+              une proposition et un tarif adaptés.
             </p>
           </div>
-          <div className="lg:col-span-7 lg:col-start-6">
-            <ul className="grid gap-3" data-reveal>
-              {workshops.items.map((item) => (
-                <li key={item} className="flex gap-3 text-ink">
-                  <span aria-hidden="true" className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8" data-reveal>
-              <ArrowLink href="/contact">Demander un devis</ArrowLink>
-            </div>
+
+          <ul className="mt-10 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-line bg-line md:grid-cols-2">
+            {quoteRequests.map((q, i) => (
+              <li key={q.title} className="bg-paper p-7 md:p-9" data-reveal style={delay(i * 90)}>
+                <p className="eyebrow text-muted">{q.audience}</p>
+                <h3 className="display-sm mt-3 text-ink">{q.title}</h3>
+                <p className="numeral mt-3 text-lg text-clay">Sur devis</p>
+                <ul className="mt-6 grid gap-3">
+                  {q.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-muted">
+                      <span aria-hidden="true" className="mt-[0.7rem] h-px w-3 shrink-0 bg-clay" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4" data-reveal>            <ButtonLink href={quoteHref} external={quoteIsExternal}>
+              Demander un devis
+            </ButtonLink>
+            <a href={site.phone.href} className="link-line text-ink">
+              <Phone size={16} />
+              {site.phone.display}
+            </a>
           </div>
         </div>
       </section>

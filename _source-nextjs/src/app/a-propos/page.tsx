@@ -6,10 +6,8 @@ import { ArrowLink, BookingButton } from "@/components/ui/Button";
 import { Eyebrow, Lines } from "@/components/ui/Typography";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Muriel Calas, préparatrice mentale à Narbonne | À propos",
-  description:
-    "Ancienne volleyeuse, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale formée par Christian Ramos : découvrez le parcours et l’approche de Muriel Calas, à Mirepeisset.",
+export const metadata = pageMetadata({  title: "Muriel Calas, préparatrice mentale en Occitanie | À propos",
+  description:    "Ancienne volleyeuse, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale formée par Christian Ramos : le parcours et l’approche de Muriel Calas, en Occitanie et en visio.",
   path: "/a-propos",
   type: "profile",
   image: {
@@ -49,9 +47,9 @@ export default function AboutPage() {
         eyebrow="Qui suis-je ?"
         title={["Accompagner", <em key="e" className="accent-italic text-navy">au-delà du corps.</em>]}
         intro={
-          <p>            Ancienne sportive, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale à
-            Mirepeisset, près de Narbonne, j’accompagne en Occitanie et en visio celles et ceux qui veulent mieux
-            comprendre leurs capacités, et s’en servir quand cela compte.
+          <p>            Ancienne sportive, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale, j’accompagne
+            en Occitanie — Toulouse, Montpellier, Castres, Font-Romeu, Narbonne — et en visio partout en France,
+            celles et ceux qui veulent mieux comprendre leurs capacités et s’en servir quand cela compte.
           </p>
         }
         image={{

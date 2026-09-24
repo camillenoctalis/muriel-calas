@@ -10,8 +10,8 @@ const subjects = [
   "Appel découverte",
   "Accompagnement sportif",
   "Stress des examens",
-  "Cycle menstruel",
-  "Intervention en club / équipe",
+  "Cycle menstruel",  "Intervention en club / équipe",
+  "Demande de devis",
   "Autre demande",
 ];
 

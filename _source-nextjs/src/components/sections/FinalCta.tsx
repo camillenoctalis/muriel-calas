@@ -8,8 +8,7 @@ export function FinalCta({
     <>
       Et si vous faisiez la différence <em className="accent-italic text-sky">dans les moments-clés ?</em>
     </>
-  ),
-  text = "À Mirepeisset, près de Narbonne, ou en visio. Un premier échange, sans engagement, pour faire le point.",
+  ),  text = "En Occitanie ou en visio, partout en France. Un premier échange, sans engagement, pour faire le point.",
 }: {
   title?: React.ReactNode;
   text?: string;

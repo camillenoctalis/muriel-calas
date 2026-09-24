@@ -7,10 +7,9 @@ import { Testimonials } from "@/components/sections/home/Testimonials";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Préparatrice mentale à Narbonne et Mirepeisset | Muriel Calas",
+export const metadata = pageMetadata({  title: "Préparatrice mentale en Occitanie et en visio | Muriel Calas",
   description:
-    "Muriel Calas, préparatrice mentale à Mirepeisset près de Narbonne : sportifs, étudiants et encadrants. Stress, confiance, concentration, émotions. En présentiel ou en visio.",
+    "Muriel Calas, préparatrice mentale en Occitanie — Toulouse, Montpellier, Castres, Font-Romeu, Narbonne — et en visio partout en France. Sportifs, étudiants et encadrants : stress, confiance, concentration, émotions.",
   path: "/",
 });
 

@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Cycle menstruel et préparation mentale | Muriel Calas",
   description:
-    "Spécialiste en optimisation du cycle menstruel : Muriel Calas aide les sportives à observer leur cycle pour adapter préparation, récupération, concentration et gestion émotionnelle. Narbonne et à distance.",
+    "Spécialiste en optimisation du cycle menstruel : Muriel Calas aide les sportives à observer leur cycle pour adapter préparation, récupération, concentration et gestion émotionnelle. En Occitanie et en visio.",
   path: "/cycle-menstruel",
 });
 

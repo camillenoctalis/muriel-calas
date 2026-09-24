@@ -3,8 +3,7 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Muriel Calas — Préparatrice mentale",
-    short_name: "Muriel Calas",
-    description: "Préparation mentale à Mirepeisset, près de Narbonne, et à distance.",
+    short_name: "Muriel Calas",    description: "Préparation mentale en Occitanie et en visio, partout en France.",
     start_url: "/",
     display: "browser",
     background_color: "#faf7f2",

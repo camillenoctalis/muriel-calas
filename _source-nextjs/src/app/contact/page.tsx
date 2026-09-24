@@ -3,13 +3,11 @@ import { Breadcrumbs } from "@/components/layout/PageHero";
 import { BookingPanel } from "@/components/contact/BookingPanel";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Clock, Phone, Pin, Video } from "@/components/ui/icons";
-import { site } from "@/content/site";
+import { coverage, site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Contact et rendez-vous | Préparatrice mentale à Narbonne",
-  description:
-    "Contactez Muriel Calas, préparatrice mentale à Mirepeisset près de Narbonne : appel découverte sans engagement, téléphone 06 22 06 44 59, séances en présentiel ou en visio.",
+export const metadata = pageMetadata({  title: "Contact et rendez-vous | Préparatrice mentale en Occitanie",
+  description:    "Contactez Muriel Calas, préparatrice mentale en Occitanie : appel découverte sans engagement, téléphone 06 22 06 44 59, séances en déplacement ou en visio partout en France.",
   path: "/contact",
 });
 
@@ -83,28 +81,26 @@ export default function ContactPage() {
                   <Pin size={20} className="mt-1 shrink-0 text-clay" />
                   <div>
                     <dt className="eyebrow text-muted">Lieu</dt>
-                    <dd className="mt-1 text-ink">
-                      Mirepeisset ({site.location.postalCode}), dans le Narbonnais
+                    <dd className="mt-1 text-ink">                      {coverage.base} · Déplacements en {coverage.region}
                     </dd>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <Video size={20} className="mt-1 shrink-0 text-clay" />
                   <div>
-                    <dt className="eyebrow text-muted">Format</dt>
-                    <dd className="mt-1 text-ink">Séances en présentiel ou en visio</dd>
+                    <dt className="eyebrow text-muted">Format</dt>                    <dd className="mt-1 text-ink">En présentiel ou en visio, partout en France</dd>
                   </div>
                 </div>
               </dl>
             </div>
           </aside>
 
-          <div className="lg:col-span-7">
-            <div className="rounded-[var(--radius-card)] bg-cream p-6 sm:p-8 md:p-12">
+          <div className="lg:col-span-7">            <div id="devis" className="scroll-mt-28 rounded-[var(--radius-card)] bg-cream p-6 sm:p-8 md:p-12">
               <h2 className="display-sm text-ink">Écrire un message</h2>
               <p className="mt-3 max-w-xl text-muted">
                 Quelques mots sur votre situation suffisent : votre discipline ou vos études, vos échéances, ce que
-                vous aimeriez travailler.
+                vous aimeriez travailler. Pour un devis (atelier, formation ou demande particulière), choisissez le
+                sujet correspondant.
               </p>
               <div className="mt-10">
                 <ContactForm />

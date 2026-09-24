@@ -25,8 +25,7 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: {
-    default: "Préparatrice mentale à Narbonne | Muriel Calas",
+  title: {    default: "Préparatrice mentale en Occitanie & en visio | Muriel Calas",
     template: "%s | Muriel Calas",
   },
   description: site.description,
