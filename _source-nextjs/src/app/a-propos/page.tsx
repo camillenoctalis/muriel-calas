@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { PageHero } from "@/components/layout/PageHero";
+import { Credentials } from "@/components/sections/Credentials";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { ArrowLink, BookingButton } from "@/components/ui/Button";
 import { Eyebrow, Lines } from "@/components/ui/Typography";
@@ -32,13 +33,11 @@ const chapters = [
   },
   {
     label: "Le déclic",
-    title: "Vers la préparation mentale",
-    text: "Pour accompagner vraiment une personne, il faut aussi prendre en compte ce qui se passe dans sa tête. Je me suis formée auprès de Christian Ramos.",
+    title: "Vers la préparation mentale",    text: "Pour accompagner vraiment une personne, il faut aussi prendre en compte ce qui se passe dans sa tête. Je me suis formée auprès de Christian Ramos, formateur Mental Plus, puis à la méthode Catch & Think.",
   },
   {
     label: "Aujourd’hui",
-    title: "Une approche globale",
-    text: "J’accompagne sportifs, étudiants et encadrants. Je suis aussi spécialisée dans le cycle menstruel chez les sportives et j’interviens notamment auprès de la Ligue Occitanie de rugby.",
+    title: "Une approche globale",    text: "J’accompagne sportifs, étudiants et encadrants, en individuel comme en atelier. Spécialisée dans le cycle menstruel chez les sportives, je forme aussi les équipes et leurs entraîneurs, notamment à la Ligue Occitanie de rugby.",
   },
 ];
 
@@ -50,10 +49,9 @@ export default function AboutPage() {
         eyebrow="Qui suis-je ?"
         title={["Accompagner", <em key="e" className="accent-italic text-navy">au-delà du corps.</em>]}
         intro={
-          <p>
-            Je m’appelle Muriel Calas. Ancienne sportive, masseur-kinésithérapeute depuis plus de 25 ans et
-            préparatrice mentale, j’accompagne depuis Mirepeisset celles et ceux qui veulent mieux comprendre leurs
-            capacités, et s’en servir quand cela compte.
+          <p>            Ancienne sportive, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale à
+            Mirepeisset, près de Narbonne, j’accompagne en Occitanie et en visio celles et ceux qui veulent mieux
+            comprendre leurs capacités, et s’en servir quand cela compte.
           </p>
         }
         image={{
@@ -104,6 +102,19 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>      {/* Formations */}
+      <section className="pb-14 md:pb-20" aria-labelledby="formations-titre">
+        <div className="wrap grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-4">
+            <Eyebrow>Formations</Eyebrow>
+            <h2 id="formations-titre" className="display-sm mt-5 text-ink">
+              Formée et référencée.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6">
+            <Credentials />
+          </div>
         </div>
       </section>
 

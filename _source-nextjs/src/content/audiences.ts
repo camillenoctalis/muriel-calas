@@ -1,5 +1,4 @@
-export type Audience = {
-  id: "sportifs" | "etudiants" | "encadrants";
+export type Audience = {  id: "sportifs" | "etudiants" | "encadrants" | "blesses";
   label: string;
   who: string;
   question: string;
@@ -34,8 +33,7 @@ export const audiences: Audience[] = [
     },
     detail: {
       title: "Sportifs amateurs et confirmés",
-      problem:
-        "À l’entraînement, tout fonctionne. Puis arrive le match, la course ou la finale : les jambes se crispent, les pensées s’emballent, une erreur en entraîne une autre. Le physique est prêt, mais la tête ne suit pas toujours.",
+      problem:        "À l’entraînement, tout fonctionne. Puis arrive le match : les jambes se crispent, une erreur en entraîne une autre. Le physique est prêt, mais la tête ne suit pas toujours.",
       situations: [
         "Un stress qui monte les jours ou les heures avant la compétition",
         "Des pertes de moyens dans les moments décisifs",
@@ -74,8 +72,7 @@ export const audiences: Audience[] = [
     },
     detail: {
       title: "Collégiens, lycéens et étudiants",
-      problem:
-        "Brevet, bac, partiels, concours, entrée en études supérieures : ces étapes arrivent souvent avec une pression forte. Même bien préparé, on peut perdre ses moyens au moment de l’épreuve, ou vivre difficilement un changement d’établissement.",
+      problem:        "Brevet, bac, partiels, concours : même bien préparé, on peut perdre ses moyens le jour de l’épreuve, ou vivre difficilement une nouvelle école et une nouvelle ville.",
       situations: [
         "Le « trou noir » devant la copie ou à l’oral",
         "Une peur de l’échec qui empêche de réviser sereinement",
@@ -97,6 +94,37 @@ export const audiences: Audience[] = [
         alt: "Étudiante tenant ses cahiers et classeurs, sac sur le dos",
       },
     },
+  },  {
+    id: "blesses",
+    label: "Sportifs blessés",
+    who: "Sportifs en rééducation ou en reprise",
+    question: "La blessure a coupé votre élan ?",
+    pitch:
+      "Pendant la rééducation puis au retour à la compétition, nous travaillons la motivation, la peur de se reblesser et la confiance dans le geste.",
+    benefit: "Garder un cap pendant l’arrêt, revenir en confiance.",
+    focus: ["Motivation", "Peur de se reblesser", "Confiance dans le geste", "Retour à la compétition"],
+    image: {
+      src: "/images/etirement-calme.jpg",
+      alt: "Sportif assis au sol pendant un étirement, dans le calme",
+    },
+    detail: {
+      title: "Sportifs blessés",
+      problem:
+        "Le corps récupère, mais la tête reste en retrait : rééducation longue, moral en dents de scie, appréhension au moment de reprendre. Kinésithérapeute depuis plus de 25 ans, je connais bien ce chemin.",
+      situations: [
+        "Une rééducation longue, où la motivation s’use",
+        "La peur de se reblesser au moment de reprendre",
+        "Un geste que l’on n’ose plus faire à pleine intensité",
+      ],
+      goals: [
+        "Garder un cap et de la motivation pendant l’arrêt",
+        "Continuer à s’entraîner mentalement, sans le terrain",
+        "Apprivoiser la peur de se reblesser",
+        "Revenir en confiance à la compétition",
+      ],
+      help:
+        "Ce travail accompagne la rééducation et le suivi médical, il ne les remplace pas.",
+    },
   },
   {
     id: "encadrants",
@@ -113,8 +141,7 @@ export const audiences: Audience[] = [
     },
     detail: {
       title: "Entraîneurs, coachs, éducateurs et arbitres",
-      problem:
-        "Sur le bord du terrain ou au milieu de l’action, vous devez décider vite, rester juste et porter le groupe, souvent sous la pression du résultat, du public ou des parents. Votre état émotionnel se transmet à celles et ceux que vous encadrez.",
+      problem:        "Décider vite, rester juste et porter le groupe, sous la pression du résultat et des regards. Votre état émotionnel se transmet à celles et ceux que vous encadrez.",
       situations: [
         "Des décisions à prendre dans l’urgence, sous le regard des autres",
         "Des émotions difficiles à contenir pendant un match",

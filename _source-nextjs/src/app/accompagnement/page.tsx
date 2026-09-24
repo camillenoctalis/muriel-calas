@@ -20,9 +20,9 @@ export const metadata = pageMetadata({
 });
 
 const practical = [
-  { icon: Clock, title: "Durée", text: "Une séance dure environ 45 minutes à 1 heure." },
-  { icon: Video, title: "Présentiel ou visio", text: "À Mirepeisset, dans le Narbonnais, ou à distance selon votre localisation et vos préférences." },
-  { icon: Check, title: "Suivi", text: "Un rendez-vous de suivi peut être proposé entre les séances pour accompagner votre progression." },
+  { icon: Clock, title: "Durée", text: "Une séance dure 1 heure." },
+  { icon: Video, title: "Présentiel ou visio", text: "À Mirepeisset et dans le Narbonnais, en déplacement en Occitanie, ou à distance en visio." },
+  { icon: Check, title: "Suivi", text: "Un rendez-vous de suivi est calé entre chaque séance, par téléphone ou en visio, pour débriefer." },
   { icon: Lock, title: "Confidentialité", text: "Les échanges se déroulent dans un cadre bienveillant, respectueux et confidentiel." },
   { icon: Calendar, title: "Prise de rendez-vous", text: "Réservation en ligne, selon vos disponibilités, ou par téléphone." },
 ];
@@ -36,8 +36,9 @@ export default function AccompagnementPage() {
         eyebrow="Mon accompagnement"
         title={["Un entraînement", <em key="e" className="accent-italic text-navy">pour la tête.</em>]}
         intro={
-          <p>            La préparation mentale développe la gestion du stress, la concentration, la confiance et la gestion
-            des émotions, comme on entraîne le physique ou la technique. Elle ne soigne pas : elle entraîne.
+          <p>
+            Le mental se prépare, se travaille et s’entraîne, comme le physique ou la technique. L’objectif :
+            rester lucide et calme le jour J, au moment où cela fait la différence.
           </p>
         }
         image={{
@@ -62,10 +63,6 @@ export default function AccompagnementPage() {
           <div className="lg:col-span-4">
             <Eyebrow dark>Boîte à outils</Eyebrow>
             <Lines id="outils-titre" className="display-md mt-6" lines={["Des outils concrets,", <em key="e" className="accent-italic text-sky">choisis avec vous.</em>]} />
-            <p className="mt-6 max-w-sm text-muted-dark" data-reveal style={delay(200)}>
-              Il n’existe pas de recette unique. Les outils sont sélectionnés selon votre fonctionnement, testés en
-              séance, puis ajustés.
-            </p>
           </div>
           <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
             {tools.map((t, i) => (

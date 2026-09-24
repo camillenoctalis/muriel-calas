@@ -41,8 +41,7 @@ export const offers: Offer[] = [
     summary: "Pour prendre conscience du changement à opérer et commencer à intégrer les bonnes attitudes.",
     objectives: [
       "Identifier les réactions contre-productives",
-      "Mettre en place les leviers du changement",
-      "Un rendez-vous de suivi entre chaque séance pour bien prendre en main les outils",
+      "Mettre en place les leviers du changement",      "Un rendez-vous de suivi entre chaque séance, pour bien prendre en main les outils",
       "Progresser durablement",
     ],
     followUp: true,
@@ -67,6 +66,18 @@ export const offers: Offer[] = [
     followUp: true,
   },
 ];
+
+/** Interventions collectives : tarif établi au cas par cas, sur devis. */
+export const workshops = {
+  title: "Ateliers & formations",
+  audience: "Clubs, équipes, staffs et encadrants",
+  items: [
+    "Ateliers de préparation mentale pour sportives et sportifs",
+    "Formation des entraîneurs et encadrants au cycle menstruel dans le sport féminin",
+    "Interventions sur mesure, en club ou en centre de formation",
+  ],
+  price: "Sur devis",
+};
 
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);

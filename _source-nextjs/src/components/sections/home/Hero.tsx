@@ -54,9 +54,7 @@ export function Hero() {
           </h1>
 
           <div className="mt-8 grid max-w-xl gap-8 lg:mt-10">
-            <p className="lead hero-fade text-muted" style={i(1)}>
-              Préparation mentale pour sportifs, étudiants et encadrants, à Mirepeisset ou en visio. Pour mieux
-              gérer le stress et rester lucide dans les moments-clés.
+            <p className="lead hero-fade text-muted" style={i(1)}>              Pour sportifs, étudiants et encadrants. À Mirepeisset, en Occitanie ou en visio.
             </p>
             <div className="hero-fade flex flex-col items-start gap-5 xs:flex-row xs:items-center xs:gap-7" style={i(2)}>
               <BookingButton />

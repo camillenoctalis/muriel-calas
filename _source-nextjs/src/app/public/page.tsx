@@ -23,9 +23,8 @@ export default function PublicPage() {
         eyebrow="Pour qui ?"
         title={["Sportifs, étudiants,", <em key="e" className="accent-italic text-navy">encadrants.</em>]}
         intro={
-          <p>
-            La préparation mentale n’est pas réservée aux athlètes de haut niveau. Elle s’adresse à toute personne
-            qui veut mieux gérer la pression et garder ses moyens dans les moments qui comptent.
+          <p>            Pas besoin d’être un athlète de haut niveau : il suffit de vouloir garder ses moyens dans les moments
+            qui comptent.
           </p>
         }
       >

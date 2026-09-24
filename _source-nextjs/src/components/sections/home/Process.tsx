@@ -67,16 +67,14 @@ export function Process({ showPractical = true }: { showPractical?: boolean }) {
           >
             <ul className="grid gap-4 text-[0.98rem] sm:grid-cols-3 sm:gap-8">
               <li className="flex items-center gap-3">
-                <Clock size={20} className="shrink-0 text-clay" />
-                Séances de {site.session.duration}
+                <Clock size={20} className="shrink-0 text-clay" />                Séances d’{site.session.duration}
               </li>
               <li className="flex items-center gap-3">
                 <Video size={20} className="shrink-0 text-clay" />
                 À Mirepeisset ou en visio
               </li>
               <li className="flex items-center gap-3">
-                <Calendar size={20} className="shrink-0 text-clay" />
-                Suivi possible entre les séances
+                <Calendar size={20} className="shrink-0 text-clay" />                Un suivi entre chaque séance
               </li>
             </ul>
             <BookingButton className="self-start lg:self-auto" />

@@ -15,8 +15,7 @@ export const metadata = pageMetadata({
   path: "/temoignages",
 });
 
-export default function TemoignagesPage() {
-  const [ilan, matteo, solene] = testimonials;
+export default function TemoignagesPage() {  const [ilan, matteo, vincent, solene] = testimonials;
 
   return (
     <>
@@ -72,35 +71,42 @@ export default function TemoignagesPage() {
                 <span className="text-muted-dark">{matteo.context}</span>
               </figcaption>
             </div>
-          </figure>
-
-          {/* Solène — bandeau */}
+          </figure>          {/* Vincent — bandeau */}
           <figure className="grid gap-8 overflow-hidden rounded-[var(--radius-card)] bg-cream p-7 md:grid-cols-12 md:items-center md:p-12 lg:col-span-12" data-reveal>
             <div className="md:col-span-8">
-              <span className="chip text-ink/80">{solene.discipline}</span>
+              <span className="chip text-ink/80">{vincent.discipline}</span>
               <blockquote className="mt-8 font-serif text-[clamp(1.4rem,1.15rem+1vw,2rem)] leading-[1.3] text-ink">
-                « <QuoteText t={solene} /> »
+                « <QuoteText t={vincent} /> »
               </blockquote>
               <figcaption className="mt-8">
-                <span className="block font-semibold text-ink">{solene.name}</span>
-                <span className="text-muted">{solene.context}</span>
+                <span className="block font-semibold text-ink">{vincent.name}</span>
+                <span className="text-muted">{vincent.context}</span>
               </figcaption>
             </div>
             <div className="md:col-span-4">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] md:aspect-[4/5]">
-                <Image src={solene.image.src} alt={solene.image.alt} fill sizes="(min-width: 768px) 30vw, 92vw" className="object-cover" />
+                <Image src={vincent.image.src} alt={vincent.image.alt} fill sizes="(min-width: 768px) 30vw, 92vw" className="object-cover" />
               </div>
               <p className="mt-2 text-xs text-muted">Photo d’illustration</p>
             </div>
           </figure>
 
-          {/* Invitation */}
-          <div className={cn("grid gap-6 rounded-[var(--radius-card)] border border-dashed border-ink/25 p-7 md:grid-cols-12 md:items-center md:p-10 lg:col-span-12")} data-reveal>
-            <div className="md:col-span-8">
+          {/* Solène — carte simple */}
+          <figure className="flex flex-col justify-between gap-8 rounded-[var(--radius-card)] border border-line p-7 md:p-10 lg:col-span-6" data-reveal>
+            <span className="chip self-start text-ink/80">{solene.discipline}</span>
+            <blockquote className="font-serif text-[1.35rem] leading-[1.35] text-ink">
+              « <QuoteText t={solene} /> »
+            </blockquote>
+            <figcaption>
+              <span className="block font-semibold text-ink">{solene.name}</span>
+              <span className="text-muted">{solene.context}</span>
+            </figcaption>
+          </figure>
+{/* Invitation */}          <div className={cn("grid gap-6 rounded-[var(--radius-card)] border border-dashed border-ink/25 p-7 md:items-center md:p-10 lg:col-span-6")} data-reveal>
+            <div>
               <p className="eyebrow text-muted">Votre retour compte</p>
               <p className="display-sm mt-3 text-ink">Vous avez été accompagné(e) ? Partagez votre expérience.</p>              <p className="mt-3 max-w-2xl text-muted">Publié uniquement avec votre accord.</p>
-</div>
-            <div className="md:col-span-4 md:justify-self-end">
+</div>            <div>
               <ArrowLink href="/contact">Envoyer mon témoignage</ArrowLink>
             </div>
           </div>

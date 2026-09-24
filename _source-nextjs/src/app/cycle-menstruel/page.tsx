@@ -3,6 +3,7 @@ import { CycleGraphic } from "@/components/sections/CycleGraphic";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { ArrowLink, BookingButton } from "@/components/ui/Button";
 import { delay, Eyebrow, Lines } from "@/components/ui/Typography";
+import { site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -21,9 +22,8 @@ export default function CyclePage() {
         eyebrow="Public féminin"
         title={["Cycle menstruel", <em key="e" className="accent-italic text-navy">& préparation mentale.</em>]}
         intro={
-          <p>
-            Spécialiste en optimisation du cycle menstruel, j’aide les sportives à mieux connaître leur
-            fonctionnement pour adapter leur préparation, plutôt que de subir leur cycle.
+          <p>            J’aide les sportives à connaître leur fonctionnement pour adapter leur préparation, plutôt que de
+            subir leur cycle. J’interviens aussi en atelier auprès des équipes et des encadrants.
           </p>
         }
         aside={
@@ -48,10 +48,8 @@ export default function CyclePage() {
           <div className="grid gap-5 text-muted lg:col-span-6 lg:col-start-7" data-reveal style={delay(150)}>
             <p>              Les fluctuations hormonales peuvent provoquer des gênes physiques ou des inconforts émotionnels, très
               variables d’une sportive à l’autre.
-            </p>            <p>
-              Beaucoup de jeunes femmes manquent d’informations sur l’impact possible sur leur pratique, et
-              n’osent pas en parler, de peur d’être écartées. J’ai moi-même connu ces difficultés, à une époque où
-              l’on n’en parlait jamais.
+            </p>            <p>            Beaucoup de jeunes femmes n’osent pas en parler, de peur d’être écartées. J’ai moi-même connu ces
+              difficultés, à une époque où l’on n’en parlait jamais.
             </p>
 </div>
         </div>
@@ -61,8 +59,13 @@ export default function CyclePage() {
               « J’ai eu envie de faire évoluer les mentalités, pour que les filles ne subissent plus leur cycle, mais
               puissent au contraire <em className="accent-italic text-sky">l’utiliser comme un atout</em>, quand
               c’est possible. »
-            </p>
-            <footer className="mt-6 text-sm text-muted-dark">Muriel Calas, dans La Dépêche du Midi (juin 2026)</footer>
+            </p>            <footer className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-dark">
+              <span>Muriel Calas, dans La Dépêche du Midi (juin 2026)</span>
+              <a href={site.press.url} target="_blank" rel="noopener noreferrer" className="link-line text-paper">
+                Lire l’article
+                <span className="sr-only"> sur ladepeche.fr (nouvel onglet)</span>
+              </a>
+            </footer>
           </blockquote>
         </div>
       </section>

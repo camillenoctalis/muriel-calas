@@ -45,14 +45,31 @@ export const site = {
    * (ex. https://calendly.com/muriel-calas/appel-decouverte).
    * Tant qu'il est vide, les boutons « Prendre rendez-vous » mènent à /contact#rendez-vous.
    */
-  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "",
-
-  session: {
-    duration: "45 min à 1 h",
+  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "",  session: {
+    duration: "1 h",
     formats: "En présentiel ou en visio",
+    followUp: "Un rendez-vous de suivi par téléphone ou en visio entre chaque séance, pour débriefer",
   },
 
-  training: "Formée à la préparation mentale par Christian Ramos",
+  training: "Formée à la préparation mentale par Christian Ramos, formateur Mental Plus",
+
+  /** Organismes de formation — logos et liens vérifiés (annuaire : Muriel y est référencée). */
+  trainings: [
+    {
+      name: "Mental Plus",
+      role: "Formation de préparateur mental, avec Christian Ramos",
+      linkLabel: "Voir l’annuaire des préparateurs mentaux",
+      url: "https://www.appli-mental-plus.com/coach/list",
+      logo: "/brand/mental-plus.png",
+    },
+    {
+      name: "Catch & Think",
+      role: "Formation aux mécanismes de l’attention et de la concentration",
+      linkLabel: "Découvrir la formation",
+      url: "https://www.mental-plus.com/fr/catch-and-think",
+      logo: "svg",
+    },
+  ],
 
   press: {
     outlet: "La Dépêche du Midi",

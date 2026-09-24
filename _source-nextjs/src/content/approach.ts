@@ -10,20 +10,16 @@ export const issues = [
 /** Parcours d’accompagnement en 4 temps */
 export const processSteps = [
   {
-    title: "Échanger",
-    text: "Un premier appel pour comprendre votre situation, vos attentes et répondre à vos questions. Sans engagement.",
+    title: "Échanger",    text: "Un premier appel, sans engagement, pour comprendre votre situation et vos attentes.",
   },
   {
-    title: "Identifier",
-    text: "Nous définissons ensemble vos besoins, ce qui se joue pour vous et les objectifs à atteindre.",
+    title: "Identifier",    text: "Nous définissons ensemble ce qui se joue pour vous et les objectifs à atteindre.",
   },
   {
-    title: "Travailler",
-    text: "Nous mettons en place des outils concrets, choisis selon votre fonctionnement et vos situations réelles.",
+    title: "Travailler",    text: "Des outils concrets, choisis selon votre fonctionnement et testés en séance.",
   },
-  {
-    title: "Intégrer",
-    text: "Vous les appliquez progressivement, en autonomie, avec un suivi entre les séances si besoin.",
+  {    title: "Intégrer",
+    text: "Vous les appliquez en autonomie, avec un rendez-vous de suivi entre chaque séance pour débriefer.",
   },
 ];
 
@@ -57,9 +53,7 @@ export const workAreas = [
 
 /** Exemples d’outils — présentés comme une boîte à outils, adaptée à chacun */
 export const tools = [
-  { title: "Respiration", text: "Ralentir, se recentrer et retrouver un état plus stable en quelques cycles." },
-  { title: "Visualisation mentale", text: "Préparer une situation en l’imaginant avec précision, y compris les difficultés." },
-  { title: "Routines", text: "Créer un cadre familier avant l’épreuve pour réduire l’incertitude." },
+  { title: "Respiration", text: "Ralentir, se recentrer et retrouver un état plus stable en quelques cycles." },  { title: "Visualisation mentale", text: "Préparer une situation en l’imaginant avec précision : une façon de s’entraîner en dehors du terrain." },  { title: "Routines", text: "Un cadre familier avant l’épreuve, pour réduire le stress et les pensées parasites." },
   { title: "Dialogue interne", text: "Repérer les pensées qui freinent et choisir des mots qui aident." },
   { title: "Ancrage", text: "Associer un geste ou un mot à un état ressource — calme, énergie — pour le retrouver au bon moment." },
   { title: "Objectifs", text: "Définir des objectifs clairs, atteignables, qui dépendent de vous." },

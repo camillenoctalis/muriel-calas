@@ -8,7 +8,7 @@ const practical = [
   { icon: Clock, title: "Durée", text: "Séances d’environ 45 min à 1 h" },
   { icon: Video, title: "Format", text: "En présentiel à Mirepeisset ou en visio" },
   { icon: Calendar, title: "Rendez-vous", text: "Prise de rendez-vous simple, en ligne ou par téléphone" },
-  { icon: Check, title: "Suivi", text: "Un suivi possible entre les séances" },
+  { icon: Check, title: "Suivi", text: "Un rendez-vous de suivi entre chaque séance" },
   { icon: Lock, title: "Cadre", text: "Des échanges bienveillants et confidentiels" },
 ];
 

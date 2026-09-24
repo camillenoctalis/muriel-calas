@@ -44,6 +44,20 @@ export const testimonials: Testimonial[] = [
       alt: "Ballon de handball posé devant une cage, dans un gymnase",
       isPortrait: false,
     },
+  },  {
+    id: "vincent",
+    name: "Vincent",
+    context: "Entraîneur de handball féminin, Nationale 2",
+    category: "Sport",
+    discipline: "Handball",
+    quote:
+      "Muriel nous a permis de créer des routines collectives et individuelles nous permettant de performer tout au long de la saison, un travail de qualité indissociable de notre réussite cette année-là. Elle m’a aidé aussi sur la façon d’aborder les choses et de modifier mes approches selon les situations.",
+    highlight: "créer des routines collectives et individuelles",
+    image: {
+      src: "/images/entraineur-bord-terrain.jpg",
+      alt: "Entraîneur au bord du terrain, donnant des consignes à son équipe",
+      isPortrait: false,
+    },
   },
   {
     id: "solene",
