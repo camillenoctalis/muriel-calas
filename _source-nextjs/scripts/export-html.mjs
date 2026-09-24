@@ -166,4 +166,25 @@ ErrorDocument 404 /404.html
 `,
 );
 
+/* --- Ménage : copies laissées par la synchro iCloud (« index 2.html ») ------ */
+function cleanSyncDuplicates(dir) {
+  let removed = 0;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name === "_source-nextjs" || entry.name === "node_modules") continue;
+      removed += cleanSyncDuplicates(full);
+      continue;
+    }
+    const m = entry.name.match(/^(.*) \d+(\.[A-Za-z0-9]+)$/);
+    if (m && fs.existsSync(path.join(dir, m[1] + m[2]))) {
+      fs.rmSync(full);
+      removed += 1;
+    }
+  }
+  return removed;
+}
+const duplicates = cleanSyncDuplicates(DEST);
+
 console.log(`${count} pages HTML générées dans ${path.relative(ROOT, DEST) || "."}/`);
+if (duplicates) console.log(`${duplicates} copie(s) de synchronisation supprimée(s).`);
