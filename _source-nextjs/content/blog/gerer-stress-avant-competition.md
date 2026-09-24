@@ -1,6 +1,6 @@
 ---
 title: "5 techniques de préparation mentale pour mieux gérer le stress avant une compétition"
-metaTitle: "Gérer le stress avant une compétition | Préparation mentale Narbonne"
+metaTitle: "Gérer le stress avant une compétition | Préparation mentale"
 description: "Découvrez 5 techniques simples de préparation mentale pour mieux gérer le stress avant une compétition et rester concentré dans les moments clés."
 excerpt: "Le stress avant une compétition est normal. L’objectif n’est pas forcément de le supprimer, mais d’apprendre à le comprendre et à l’utiliser. Cinq pistes simples pour aborder plus sereinement les moments importants."
 date: "2026-09-21"
@@ -10,7 +10,7 @@ coverAlt: "Pieds d’un sprinteur en pointes sur la piste, juste avant de se pla
 status: "publie"
 cta:
   title: "Vous souhaitez travailler votre gestion du stress en compétition ?"
-  text: "J’accompagne les sportifs dans le Narbonnais et à distance pour travailler notamment :"
+  text: "J’accompagne les sportifs en Occitanie et en visio pour travailler notamment :"
   points: ["le stress", "la confiance", "la concentration", "la gestion émotionnelle", "la préparation aux moments-clés"]
 ---
 
