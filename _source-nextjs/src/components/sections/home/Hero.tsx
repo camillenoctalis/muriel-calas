@@ -66,9 +66,10 @@ export function Hero() {
         <div className="relative lg:col-span-4 lg:pt-4">
           <figure className="relative mx-auto max-w-[26rem] lg:mx-0 lg:ml-auto">
             <div className="hero-media relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-sand">
-              <div data-parallax="0.05" className="absolute -inset-y-6 inset-x-0">                <Image
-                  src="/images/muriel-calas-seance.jpg"
-                  alt="Muriel Calas, préparatrice mentale, assise à son bureau, carnet à la main"
+              <div data-parallax="0.05" className="absolute -inset-y-6 inset-x-0">
+                <Image
+                  src="/images/muriel-calas-accueil.jpg"
+                  alt="Muriel Calas, préparatrice mentale, souriante, assise à son bureau, carnet à la main"
                   fill
                   preload
                   quality={85}

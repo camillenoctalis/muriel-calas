@@ -47,14 +47,16 @@ export default function AboutPage() {
         eyebrow="Qui suis-je ?"
         title={["Accompagner", <em key="e" className="accent-italic text-navy">au-delà du corps.</em>]}
         intro={
-          <p>            Ancienne sportive, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale, j’accompagne
+          <p>
+            Ancienne sportive, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale, j’accompagne
             en Occitanie — Toulouse, Montpellier, Castres, Font-Romeu, Narbonne — et en visio partout en France,
             celles et ceux qui veulent mieux comprendre leurs capacités et s’en servir quand cela compte.
           </p>
-        }        image={{
-          src: "/images/muriel-bureau-notes.jpg",
-          alt: "Muriel Calas à son bureau, en train d’écrire dans un carnet pendant une séance",
-          position: "50% 30%",
+        }
+        image={{
+          src: "/images/muriel-calas-seance.jpg",
+          alt: "Muriel Calas à son bureau, carnet à la main, pendant une séance",
+          position: "50% 25%",
           caption: "Muriel Calas, préparatrice mentale à Narbonne",
         }}
       >
