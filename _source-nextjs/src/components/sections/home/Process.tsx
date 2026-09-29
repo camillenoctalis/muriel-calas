@@ -70,8 +70,7 @@ export function Process({ showPractical = true }: { showPractical?: boolean }) {
                 <Clock size={20} className="shrink-0 text-clay" />                Séances d’{site.session.duration}
               </li>
               <li className="flex items-center gap-3">
-                <Video size={20} className="shrink-0 text-clay" />
-                À Mirepeisset ou en visio
+                <Video size={20} className="shrink-0 text-clay" />                À Narbonne, en Occitanie ou en visio
               </li>
               <li className="flex items-center gap-3">
                 <Calendar size={20} className="shrink-0 text-clay" />                Un suivi entre chaque séance

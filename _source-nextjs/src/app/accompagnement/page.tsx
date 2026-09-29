@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -12,15 +13,14 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { offers, formatPrice } from "@/content/offers";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({  title: "Accompagnement en préparation mentale | Occitanie & visio",
-  description:
-    "Comment se déroule un accompagnement en préparation mentale avec Muriel Calas : premier appel, objectifs, outils concrets, séances de 45 min à 1 h, suivi, présentiel à Mirepeisset ou visio.",
+export const metadata = pageMetadata({
+  title: "Accompagnement en préparation mentale | Occitanie & visio",
+  description:    "Comment se déroule un accompagnement en préparation mentale avec Muriel Calas : appel découverte gratuit de 30 minutes, outils concrets, séances d’une heure, suivi entre les séances, à Narbonne ou en visio.",
   path: "/accompagnement",
 });
 
 const practical = [
-  { icon: Clock, title: "Durée", text: "Une séance dure 1 heure." },
-  { icon: Video, title: "Présentiel ou visio", text: "En déplacement en Occitanie (Toulouse, Montpellier, Castres, Font-Romeu, Narbonne) ou en visio, partout en France." },
+  { icon: Clock, title: "Durée", text: "Une séance dure 1 heure." },  { icon: Video, title: "Présentiel ou visio", text: "À Narbonne, en déplacement en Occitanie (Toulouse, Montpellier, Castres, Font-Romeu) ou en visio, partout en France." },
   { icon: Check, title: "Suivi", text: "Un rendez-vous de suivi est calé entre chaque séance, par téléphone ou en visio, pour débriefer." },
   { icon: Lock, title: "Confidentialité", text: "Les échanges se déroulent dans un cadre bienveillant, respectueux et confidentiel." },
   { icon: Calendar, title: "Prise de rendez-vous", text: "Réservation en ligne, selon vos disponibilités, ou par téléphone." },
@@ -39,11 +39,10 @@ export default function AccompagnementPage() {
             Le mental se prépare, se travaille et s’entraîne, comme le physique ou la technique. L’objectif :
             rester lucide et calme le jour J, au moment où cela fait la différence.
           </p>
-        }
-        image={{
-          src: "/images/carnet-seance.jpg",
-          alt: "Mains prenant des notes dans un carnet pendant une séance",
-          position: "50% 50%",
+        }        image={{
+          src: "/images/carnet-ballon-seance.jpg",
+          alt: "Muriel Calas prenant des notes dans un carnet, un ballon posé sur le bureau",
+          position: "50% 55%",
         }}
       >
         <div className="flex flex-col items-start gap-5 xs:flex-row xs:items-center xs:gap-7">
@@ -107,7 +106,17 @@ export default function AccompagnementPage() {
                 </div>
               </div>
             ))}
-          </dl>
+          </dl>          <figure className="lg:col-span-12" data-reveal="media">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] bg-sand">
+              <Image
+                src="/images/bureau-paperboard.jpg"
+                alt="Le bureau de travail avec un paperboard où sont notées les étapes de gestion de la pression"
+                fill
+                sizes="(min-width: 1024px) 70vw, 92vw"
+                className="object-cover object-[50%_35%]"
+              />
+            </div>
+          </figure>
           <p className="text-sm text-muted lg:col-span-12">
             La préparation mentale ne remplace pas un suivi médical ou psychologique. En cas de souffrance
             importante, un professionnel de santé (médecin, psychologue) sera l’interlocuteur adapté.

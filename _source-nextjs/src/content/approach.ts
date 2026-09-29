@@ -10,7 +10,7 @@ export const issues = [
 /** Parcours d’accompagnement en 4 temps */
 export const processSteps = [
   {
-    title: "Échanger",    text: "Un premier appel, sans engagement, pour comprendre votre situation et vos attentes.",
+    title: "Échanger",    text: "Un appel découverte gratuit de 30 minutes, sans engagement, pour comprendre votre situation et vos attentes.",
   },
   {
     title: "Identifier",    text: "Nous définissons ensemble ce qui se joue pour vous et les objectifs à atteindre.",

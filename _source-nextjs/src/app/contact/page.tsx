@@ -46,8 +46,7 @@ export default function ContactPage() {
 
             <div className="rounded-[var(--radius-card)] border border-line p-7 md:p-9">
               <div className="flex items-center gap-4">
-                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-sand">
-                  <Image src="/images/muriel-calas-preparatrice-mentale.jpg" alt="" fill sizes="56px" className="object-cover object-[50%_25%]" />
+                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-sand">                  <Image src="/images/muriel-calas-seance.jpg" alt="" fill sizes="56px" className="object-cover object-[50%_18%]" />
                 </span>
                 <p className="leading-tight">
                   <span className="block font-serif text-xl text-ink">Muriel Calas</span>
@@ -92,7 +91,20 @@ export default function ContactPage() {
                   </div>
                 </div>
               </dl>
-            </div>
+            </div>            <figure>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-sand">
+                <Image
+                  src="/images/salle-seance.jpg"
+                  alt="L’espace où se déroulent les séances en présentiel : un canapé clair et un cadre au mur"
+                  fill
+                  sizes="(min-width: 1024px) 38vw, 92vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm text-muted">
+                L’espace où se déroulent les séances en présentiel.
+              </figcaption>
+            </figure>
           </aside>
 
           <div className="lg:col-span-7">            <div id="devis" className="scroll-mt-28 rounded-[var(--radius-card)] bg-cream p-6 sm:p-8 md:p-12">

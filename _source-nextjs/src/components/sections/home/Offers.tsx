@@ -15,8 +15,7 @@ export function Offers() {
               lines={["Avancer à votre rythme,", <>jusqu’à <em className="accent-italic text-sky">l’autonomie.</em></>]}
             />
           </div>
-          <p className="max-w-md text-muted-dark lg:col-span-4 lg:col-start-9" data-reveal style={delay(200)}>
-            Trois formules, à Mirepeisset ou en visio. Séances de 45 min à 1 h.
+          <p className="max-w-md text-muted-dark lg:col-span-4 lg:col-start-9" data-reveal style={delay(200)}>            Trois formules, à Narbonne, en Occitanie ou en visio. Séances d’une heure.
           </p>
         </div>
 

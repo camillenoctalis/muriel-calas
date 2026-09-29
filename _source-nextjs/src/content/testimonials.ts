@@ -35,10 +35,9 @@ export const testimonials: Testimonial[] = [
     name: "Matteo",
     context: "Joueur de handball au centre de formation du Fenix Toulouse",
     category: "Sport",
-    discipline: "Handball",
-    quote:
-      "L’accompagnement en préparation mentale avec Muriel m’a énormément aidé à surmonter les moments de doute, notamment à mieux gérer l’échec après les tirs manqués, et à retrouver confiance en moi.",
-    highlight: "retrouver confiance en moi",
+    discipline: "Handball",    quote:
+      "Mon arrêt sur blessure a été un vrai coup dur, mentalement comme physiquement. Heureusement, le suivi mental avec Muriel (chaleureuse et hyper accueillante dès la première séance !) m’a énormément apporté. J’ai réappris à rebondir après un tir manqué et à balayer mes incertitudes. Son expertise et son soutien constant m’ont permis de reprendre le handball en toute sérénité, sans la moindre appréhension.",
+    highlight: "reprendre le handball en toute sérénité",
     image: {
       src: "/images/handball-terrain.jpg",
       alt: "Ballon de handball posé devant une cage, dans un gymnase",
@@ -56,6 +55,20 @@ export const testimonials: Testimonial[] = [
     image: {
       src: "/images/entraineur-bord-terrain.jpg",
       alt: "Entraîneur au bord du terrain, donnant des consignes à son équipe",
+      isPortrait: false,
+    },
+  },  {
+    id: "berenice",
+    name: "Bérénice",
+    context: "Étudiante en BTM Pâtisserie, à Lyon",
+    category: "Études",
+    discipline: "Études & vie professionnelle",
+    quote:
+      "Ces derniers mois ont été très éprouvants pour moi professionnellement, avec beaucoup de pression et de doutes. L’accompagnement de Muriel m’a aidée à mieux gérer mon stress, mes émotions et à retrouver confiance en moi. Son écoute, sa bienveillance et les outils transmis m’ont permis d’aborder les situations difficiles autrement. Je termine cet accompagnement avec de vraies clés pour la suite, autant pour ma vie pro que perso.",
+    highlight: "de vraies clés pour la suite",
+    image: {
+      src: "/images/carnet-crayon.jpg",
+      alt: "Carnet et crayon posés sur une table de travail",
       isPortrait: false,
     },
   },

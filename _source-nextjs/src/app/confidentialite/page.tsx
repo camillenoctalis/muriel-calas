@@ -16,8 +16,7 @@ export default function ConfidentialitePage() {
       </p>
 
       <h2>Responsable du traitement</h2>
-      <p>
-        Muriel Calas, préparatrice mentale, Mirepeisset (Aude). Contact : <ToComplete>adresse e-mail dédiée aux
+      <p>        Muriel Calas, préparatrice mentale, Narbonne (Aude). Contact : <ToComplete>adresse e-mail dédiée aux
         questions de données personnelles</ToComplete>.
       </p>
 

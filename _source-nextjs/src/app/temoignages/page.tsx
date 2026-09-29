@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   path: "/temoignages",
 });
 
-export default function TemoignagesPage() {  const [ilan, matteo, vincent, solene] = testimonials;
+export default function TemoignagesPage() {  const [ilan, matteo, vincent, berenice, solene] = testimonials;
 
   return (
     <>
@@ -88,24 +88,29 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, solen
               </div>
               <p className="mt-2 text-xs text-muted">Photo d’illustration</p>
             </div>
-          </figure>
-
-          {/* Solène — carte simple */}
-          <figure className="flex flex-col justify-between gap-8 rounded-[var(--radius-card)] border border-line p-7 md:p-10 lg:col-span-6" data-reveal>
-            <span className="chip self-start text-ink/80">{solene.discipline}</span>
-            <blockquote className="font-serif text-[1.35rem] leading-[1.35] text-ink">
-              « <QuoteText t={solene} /> »
-            </blockquote>
-            <figcaption>
-              <span className="block font-semibold text-ink">{solene.name}</span>
-              <span className="text-muted">{solene.context}</span>
-            </figcaption>
-          </figure>
-{/* Invitation */}          <div className={cn("grid gap-6 rounded-[var(--radius-card)] border border-dashed border-ink/25 p-7 md:items-center md:p-10 lg:col-span-6")} data-reveal>
-            <div>
+          </figure>          {/* Bérénice & Solène — cartes simples */}
+          {[berenice, solene].map((t, i) => (
+            <figure
+              key={t.id}
+              className="flex flex-col justify-between gap-8 rounded-[var(--radius-card)] border border-line p-7 md:p-10 lg:col-span-6"
+              data-reveal
+              style={delay(i * 100)}
+            >
+              <span className="chip self-start text-ink/80">{t.discipline}</span>
+              <blockquote className="font-serif text-[1.3rem] leading-[1.35] text-ink">
+                « <QuoteText t={t} /> »
+              </blockquote>
+              <figcaption>
+                <span className="block font-semibold text-ink">{t.name}</span>
+                <span className="text-muted">{t.context}</span>
+              </figcaption>
+            </figure>
+          ))}
+{/* Invitation */}          <div className={cn("grid gap-6 rounded-[var(--radius-card)] border border-dashed border-ink/25 p-7 md:grid-cols-12 md:items-center md:p-10 lg:col-span-12")} data-reveal>
+            <div className="md:col-span-8">
               <p className="eyebrow text-muted">Votre retour compte</p>
               <p className="display-sm mt-3 text-ink">Vous avez été accompagné(e) ? Partagez votre expérience.</p>              <p className="mt-3 max-w-2xl text-muted">Publié uniquement avec votre accord.</p>
-</div>            <div>
+</div>            <div className="md:col-span-4 md:justify-self-end">
               <ArrowLink href="/contact">Envoyer mon témoignage</ArrowLink>
             </div>
           </div>

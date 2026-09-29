@@ -12,13 +12,12 @@ export function Hero() {
         <div className="relative z-10 lg:col-span-8">
           {/* Mobile : un visage dès le premier écran */}
           <div className="hero-fade mb-7 flex items-center gap-3 lg:hidden" style={i(0)}>
-            <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-sand">
-              <Image
-                src="/images/muriel-calas-preparatrice-mentale.jpg"
+            <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-sand">              <Image
+                src="/images/muriel-calas-seance.jpg"
                 alt=""
                 fill
                 sizes="44px"
-                className="object-cover object-[50%_22%]"
+                className="object-cover object-[50%_18%]"
               />
             </span>
             <span className="leading-tight">
@@ -53,7 +52,8 @@ export function Hero() {
           </h1>
 
           <div className="mt-8 grid max-w-xl gap-8 lg:mt-10">
-            <p className="lead hero-fade text-muted" style={i(1)}>              Pour sportifs, étudiants et encadrants. À Mirepeisset, en Occitanie ou en visio.
+            <p className="lead hero-fade text-muted" style={i(1)}>
+              Pour sportifs, étudiants et encadrants. À Narbonne, en Occitanie ou en visio.
             </p>
             <div className="hero-fade flex flex-col items-start gap-5 xs:flex-row xs:items-center xs:gap-7" style={i(2)}>
               <BookingButton />
@@ -66,15 +66,14 @@ export function Hero() {
         <div className="relative lg:col-span-4 lg:pt-4">
           <figure className="relative mx-auto max-w-[26rem] lg:mx-0 lg:ml-auto">
             <div className="hero-media relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-sand">
-              <div data-parallax="0.05" className="absolute -inset-y-6 inset-x-0">
-                <Image
-                  src="/images/muriel-calas-preparatrice-mentale.jpg"
-                  alt="Portrait de Muriel Calas, préparatrice mentale, souriante, en chemise rayée bleue"
+              <div data-parallax="0.05" className="absolute -inset-y-6 inset-x-0">                <Image
+                  src="/images/muriel-calas-seance.jpg"
+                  alt="Muriel Calas, préparatrice mentale, assise à son bureau, carnet à la main"
                   fill
                   preload
                   quality={85}
                   sizes="(min-width: 1024px) 26rem, (min-width: 480px) 26rem, 92vw"
-                  className="object-cover object-[46%_30%]"
+                  className="object-cover object-[50%_22%]"
                 />
               </div>
             </div>

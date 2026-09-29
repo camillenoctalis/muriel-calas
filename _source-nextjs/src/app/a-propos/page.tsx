@@ -51,12 +51,11 @@ export default function AboutPage() {
             en Occitanie — Toulouse, Montpellier, Castres, Font-Romeu, Narbonne — et en visio partout en France,
             celles et ceux qui veulent mieux comprendre leurs capacités et s’en servir quand cela compte.
           </p>
-        }
-        image={{
-          src: "/images/muriel-calas-preparatrice-mentale.jpg",
-          alt: "Portrait de Muriel Calas, souriante, en chemise rayée bleue",
-          position: "46% 30%",
-          caption: "Muriel Calas, préparatrice mentale à Mirepeisset",
+        }        image={{
+          src: "/images/muriel-bureau-notes.jpg",
+          alt: "Muriel Calas à son bureau, en train d’écrire dans un carnet pendant une séance",
+          position: "50% 30%",
+          caption: "Muriel Calas, préparatrice mentale à Narbonne",
         }}
       >
         <div className="flex flex-col items-start gap-5 xs:flex-row xs:items-center xs:gap-7">

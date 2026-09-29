@@ -3,8 +3,7 @@ import { site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Mentions légales | Muriel Calas, préparatrice mentale",
-  description: "Mentions légales du site de Muriel Calas, préparatrice mentale à Mirepeisset (Aude).",
+  title: "Mentions légales | Muriel Calas, préparatrice mentale",  description: "Mentions légales du site de Muriel Calas, préparatrice mentale à Narbonne (Aude).",
   path: "/mentions-legales",
 });
 

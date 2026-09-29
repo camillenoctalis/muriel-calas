@@ -17,8 +17,8 @@ export function BookingPanel() {
     <div id="rendez-vous" className="on-dark scroll-mt-28 rounded-[var(--radius-card)] bg-ink p-7 text-paper md:p-9">
       <span className="grid h-12 w-12 place-items-center rounded-full bg-paper/10 text-clay-light">
         <Calendar size={22} />
-      </span>
-      <h2 className="display-sm mt-6">Réserver un appel découverte</h2>
+      </span>      <h2 className="display-sm mt-6">Réserver un appel découverte</h2>
+      <p className="eyebrow mt-3 text-clay-light">{site.discoveryCall.label}</p>
       <p className="mt-3 text-muted-dark">
         Un premier échange, sans engagement, pour faire le point sur votre situation et voir comment avancer
         ensemble.

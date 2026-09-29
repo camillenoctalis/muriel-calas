@@ -27,21 +27,7 @@ export default function TarifsPage() {
         }
       />
 
-      <section className="section-y border-t border-line bg-cream" aria-label="Formules">
-        <div className="wrap">
-          <Pricing tone="light" />
-
-          <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between" data-reveal>
-            <p className="max-w-2xl text-muted">
-              Vous hésitez ? Le premier échange sert à ça : nous choisissons ensemble la formule adaptée. Les
-              modalités pratiques (règlement, calendrier) sont précisées à ce moment-là.
-            </p>
-            <BookingButton className="self-start md:self-auto" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section-y" aria-labelledby="devis-titre">
+      <section className="section-y border-t border-line" aria-labelledby="devis-titre">
         <div className="wrap">
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
@@ -81,6 +67,20 @@ export default function TarifsPage() {
               <Phone size={16} />
               {site.phone.display}
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-cream" aria-label="Formules">
+        <div className="wrap">
+          <Pricing tone="light" />
+
+          <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between" data-reveal>
+            <p className="max-w-2xl text-muted">
+              Vous hésitez ? Le premier échange sert à ça : nous choisissons ensemble la formule adaptée. Les
+              modalités pratiques (règlement, calendrier) sont précisées à ce moment-là.
+            </p>
+            <BookingButton className="self-start md:self-auto" />
           </div>
         </div>
       </section>

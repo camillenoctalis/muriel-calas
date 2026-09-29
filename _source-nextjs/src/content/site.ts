@@ -34,13 +34,11 @@ export const site = {
   },
 
   /** Localisation connue : commune uniquement (aucune adresse postale n'a été fournie). */
-  location: {
-    locality: "Mirepeisset",
-    postalCode: "11120",
+  location: {    locality: "Narbonne",
+    postalCode: "11100",
     region: "Occitanie",
     department: "Aude",
-    country: "FR",
-    geo: { latitude: 43.2846, longitude: 2.8966 },
+    country: "FR",    geo: { latitude: 43.1493, longitude: 3.0337 },
   },
 
   /**
@@ -49,7 +47,13 @@ export const site = {
    * (ex. https://calendly.com/muriel-calas/appel-decouverte).
    * Tant qu'il est vide, les boutons « Prendre rendez-vous » mènent à /contact#rendez-vous.
    */
-  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "",  session: {
+  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "",  /** Premier échange téléphonique, offert. */
+  discoveryCall: {
+    duration: "30 minutes",
+    label: "Appel découverte gratuit · 30 minutes",
+  },
+
+  session: {
     duration: "1 h",
     formats: "En présentiel ou en visio",
     followUp: "Un rendez-vous de suivi par téléphone ou en visio entre chaque séance, pour débriefer",
@@ -69,8 +73,7 @@ export const site = {
     {
       name: "Catch & Think",
       role: "Formation aux mécanismes de l’attention et de la concentration",
-      linkLabel: "Découvrir la formation",
-      url: "https://www.mental-plus.com/fr/catch-and-think",
+      linkLabel: "Découvrir la formation",      url: "https://catchandthinkacademy.com/fr/accueil/",
       logo: "svg",
     },
   ],
@@ -132,8 +135,7 @@ export const footerNav = {
  * et accompagnement à distance partout en France.
  */
 export const coverage = {
-  region: "Occitanie",
-  base: "Mirepeisset (Aude)",
+  region: "Occitanie",  base: "Narbonne (Aude)",
   cities: ["Toulouse", "Montpellier", "Castres", "Font-Romeu", "Narbonne", "Perpignan", "Béziers", "Carcassonne", "Nîmes"],
   remote: "Visio partout en France",
 } as const;

@@ -49,8 +49,7 @@ export default function PublicPage() {
             aria-labelledby={`${a.id}-titre`}
           >
             <div className="wrap grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-10">
-              <div className={cn("lg:col-span-5", flip && "lg:order-2 lg:col-start-8")}>
-                <div data-reveal="media" className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-sand">
+              <div className={cn("lg:col-span-5", flip && "lg:order-2 lg:col-start-8")}>                <div data-reveal="media" className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-card)] bg-sand">
                   <Image src={a.image.src} alt={a.image.alt} fill sizes="(min-width: 1024px) 38vw, 92vw" className="object-cover" />
                 </div>
               </div>
