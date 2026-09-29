@@ -68,26 +68,21 @@ export const offers: Offer[] = [
 ];
 
 /** Demandes qui ne rentrent pas dans les trois formules : tarif établi au cas par cas. */
-export const quoteRequests = [
-  {
-    title: "Ateliers & formations",
-    audience: "Clubs, équipes, staffs et encadrants",
-    items: [
-      "Ateliers de préparation mentale pour sportives et sportifs",
-      "Formation des entraîneurs au cycle menstruel dans le sport féminin",
-      "Interventions en club ou en centre de formation",
-    ],
-  },
-  {
-    title: "Demande particulière",
-    audience: "Situations spécifiques",
-    items: [
-      "Une situation qui sort du cadre des trois formules",
-      "Un accompagnement long, une échéance ou un format inhabituel",
-      "Un accompagnement à construire à plusieurs (sportif, famille, encadrant)",
-    ],
-  },
-];
+export const quoteOffer = {
+  id: "sur-devis",
+  name: "Sur devis",
+  intention: "Ma demande sort du cadre",
+  step: "Sur mesure",
+  price: "Sur devis",
+  sessions: "Ateliers, formations et situations particulières",
+  summary: "Pour les clubs, les équipes et les encadrants, ou une situation qui ne rentre pas dans les formules.",
+  objectives: [
+    "Ateliers de préparation mentale pour sportives et sportifs",
+    "Formation des entraîneurs au cycle menstruel dans le sport féminin",
+    "Interventions en club ou en centre de formation",
+    "Un accompagnement long ou un format inhabituel",
+  ],
+};
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
 
