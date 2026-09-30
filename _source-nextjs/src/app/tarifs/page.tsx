@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Tarifs préparation mentale | Occitanie & visio | Muriel Calas",
   description:
-    "Séance découverte 80 €, suivi 5 séances 375 €, suivi 10 séances 720 € : les tarifs de préparation mentale de Muriel Calas, en Occitanie ou en visio. Ateliers et formations sur devis.",
+    "Séance découverte 80 €, suivi 5 séances 375 €, suivi 10 séances 720 €. Ateliers, formations et demandes particulières sur devis.",
   path: "/tarifs",
 });
 

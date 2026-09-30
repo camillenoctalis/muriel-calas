@@ -166,6 +166,24 @@ ErrorDocument 404 /404.html
 `,
 );
 
+/* --- Ménage : images du site qui ne sont plus référencées ------------------- */
+function cleanUnusedImages() {
+  const used = new Set();
+  for (const file of walk(DEST, (f) => /\.(html|xml|webmanifest)$/.test(f))) {
+    for (const m of fs.readFileSync(file, "utf8").matchAll(/images\/([A-Za-z0-9._-]+\.(?:jpe?g|webp|png))/g)) {
+      used.add(m[1]);
+    }
+  }
+  let removed = 0;
+  for (const f of fs.readdirSync(path.join(DEST, "images"))) {
+    if (used.has(f)) continue;
+    fs.rmSync(path.join(DEST, "images", f));
+    removed += 1;
+  }
+  return removed;
+}
+const unusedImages = cleanUnusedImages();
+
 /* --- Ménage : copies laissées par la synchro iCloud (« index 2.html ») ------ */
 function cleanSyncDuplicates(dir) {
   let removed = 0;
@@ -188,3 +206,4 @@ const duplicates = cleanSyncDuplicates(DEST);
 
 console.log(`${count} pages HTML générées dans ${path.relative(ROOT, DEST) || "."}/`);
 if (duplicates) console.log(`${duplicates} copie(s) de synchronisation supprimée(s).`);
+if (unusedImages) console.log(`${unusedImages} image(s) inutilisée(s) retirée(s).`);

@@ -7,7 +7,7 @@ import { coverage, site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({  title: "Contact et rendez-vous | Préparatrice mentale en Occitanie",
-  description:    "Contactez Muriel Calas, préparatrice mentale en Occitanie : appel découverte sans engagement, téléphone 06 22 06 44 59, séances en déplacement ou en visio partout en France.",
+  description:    "Appel découverte gratuit de 30 minutes, sans engagement. Téléphone 06 22 06 44 59, séances en Occitanie ou en visio partout en France.",
   path: "/contact",
 });
 

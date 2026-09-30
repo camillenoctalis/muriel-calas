@@ -15,7 +15,7 @@ import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Accompagnement en préparation mentale | Occitanie & visio",
-  description:    "Comment se déroule un accompagnement en préparation mentale avec Muriel Calas : appel découverte gratuit de 30 minutes, outils concrets, séances d’une heure, suivi entre les séances, à Narbonne ou en visio.",
+  description:    "Appel découverte gratuit de 30 minutes, séances d’une heure, outils concrets et suivi entre chaque séance : comment se déroule l’accompagnement.",
   path: "/accompagnement",
 });
 

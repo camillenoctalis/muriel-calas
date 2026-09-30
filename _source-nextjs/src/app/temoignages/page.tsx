@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
 
 export const metadata = pageMetadata({
   title: "Avis et témoignages préparation mentale | Muriel Calas",
-  description:    "Témoignages de sportifs, d’étudiants et d’entraîneurs accompagnés en préparation mentale par Muriel Calas, en Occitanie et en visio : visualisation, confiance, gestion du stress, routines.",
+  description:    "Sportifs, étudiants et entraîneurs racontent leur accompagnement en préparation mentale avec Muriel Calas : confiance, stress, routines, reprise.",
   path: "/temoignages",
 });
 

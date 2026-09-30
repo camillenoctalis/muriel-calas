@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/cn";
 
 export const metadata = pageMetadata({  title: "Préparation mentale sportifs, étudiants, coachs | Occitanie",
-  description:    "Préparation mentale en Occitanie et en visio pour sportifs amateurs et confirmés, sportifs blessés, collégiens, lycéens, étudiants, entraîneurs, éducateurs et arbitres : stress, confiance, concentration.",
+  description:    "Sportifs amateurs ou confirmés, sportifs blessés, étudiants, entraîneurs et arbitres : à qui s’adresse la préparation mentale, et pour quels objectifs.",
   path: "/public",
 });
 

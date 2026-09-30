@@ -13,7 +13,6 @@ export type Audience = {  id: "sportifs" | "etudiants" | "encadrants" | "blesses
     situations: string[];
     goals: string[];
     help: string;
-    secondaryImage?: { src: string; alt: string };
   };
 };
 
@@ -50,10 +49,6 @@ export const audiences: Audience[] = [
       ],
       help:
         "Ancienne joueuse de volley-ball et kinésithérapeute au contact des sportifs depuis plus de 25 ans, je connais le terrain, ses exigences et ses moments de vérité. Ensemble, nous partons de vos situations réelles pour construire des outils que vous pourrez utiliser seul(e), le jour J.",
-      secondaryImage: {
-        src: "/images/athlete-avant-course.jpg",
-        alt: "Pieds d’un sprinteur en pointes, juste avant de se placer dans les starting-blocks",
-      },
     },
   },
   {
@@ -88,10 +83,6 @@ export const audiences: Audience[] = [
       ],
       help:
         "Nous travaillons à partir de votre situation concrète : votre calendrier, vos épreuves, ce qui se passe pour vous quand le stress monte. L’objectif est simple : vous permettre de montrer ce que vous savez réellement faire, le jour J.",
-      secondaryImage: {
-        src: "/images/etudiante-cours.jpg",
-        alt: "Étudiante tenant ses cahiers et classeurs, sac sur le dos",
-      },
     },
   },  {
     id: "blesses",
@@ -157,10 +148,6 @@ export const audiences: Audience[] = [
       ],
       help:
         "Nous travaillons sur vos situations de terrain, pour que vous puissiez garder la maîtrise de vous-même et offrir à votre groupe un cadre plus serein. J’interviens aussi auprès de staffs et d’équipes, notamment sur la question du cycle menstruel dans le sport féminin.",
-      secondaryImage: {
-        src: "/images/arbitre-terrain.jpg",
-        alt: "Arbitre assistant de dos, drapeau en main, face au terrain de football",
-      },
     },
   },
 ];

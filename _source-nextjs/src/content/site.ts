@@ -10,8 +10,7 @@ export const site = {
   url: "https://www.muriel-calas.fr",
   locale: "fr_FR",
   tagline: "Apprendre à maîtriser ce qui dépend de vous",
-  description:
-    "Muriel Calas, préparatrice mentale en Occitanie — Toulouse, Montpellier, Castres, Font-Romeu, Narbonne — et en visio partout en France : sportifs, étudiants et encadrants, pour mieux gérer le stress, la pression, les émotions et la confiance.",  /**
+  description:    "Préparation mentale pour sportifs, étudiants et encadrants : stress, pression, émotions, confiance. À Narbonne, en Occitanie et en visio partout en France.",  /**
    * Adresse e-mail publique. Aucune n'a été fournie : tant qu'elle est vide, les demandes de devis
    * passent par le formulaire de contact. La renseigner ici bascule automatiquement les liens en mailto.
    */

@@ -9,7 +9,7 @@ import { site } from "@/content/site";
 export const metadata = pageMetadata({
   title: "Conseils en préparation mentale | Blog de Muriel Calas",
   description:
-    "Stress en compétition, confiance, concentration, examens, cycle menstruel : les conseils de Muriel Calas, préparatrice mentale en Occitanie, pour mieux comprendre ce qui se joue dans la tête.",
+    "Stress en compétition, confiance, concentration, examens, cycle menstruel : les conseils de Muriel Calas, préparatrice mentale en Occitanie.",
   path: "/blog",
 });
 

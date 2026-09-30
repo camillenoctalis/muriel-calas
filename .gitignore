@@ -1,7 +1,7 @@
 .DS_Store
-Photos/
-Logo/
+
+# Sources non publiées : photos d'origine, logos fournis par la cliente
+_ressources/
 
 # Copies créées par la synchronisation iCloud du Bureau (« index 2.html »)
 * [0-9].*
-Shooting 1/

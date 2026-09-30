@@ -7,7 +7,7 @@ import { Eyebrow, Lines } from "@/components/ui/Typography";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({  title: "Muriel Calas, préparatrice mentale en Occitanie | À propos",
-  description:    "Ancienne volleyeuse, masseur-kinésithérapeute depuis plus de 25 ans et préparatrice mentale formée par Christian Ramos : le parcours et l’approche de Muriel Calas, en Occitanie et en visio.",
+  description:    "Ancienne volleyeuse et kinésithérapeute depuis plus de 25 ans : le parcours et l’approche de Muriel Calas, préparatrice mentale en Occitanie et en visio.",
   path: "/a-propos",
   type: "profile",
   image: {

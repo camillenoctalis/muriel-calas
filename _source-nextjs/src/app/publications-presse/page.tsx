@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Publications presse | Muriel Calas, préparatrice mentale",
   description:
-    "Muriel Calas dans La Dépêche du Midi : comment mieux gérer les cycles menstruels dans le sport féminin. Une intervention auprès des éducateurs de la Ligue Occitanie de rugby.",
+    "Muriel Calas dans La Dépêche du Midi : mieux gérer le cycle menstruel dans le sport féminin, avec les éducateurs de la Ligue Occitanie de Rugby.",
   path: "/publications-presse",
 });
 
