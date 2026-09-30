@@ -106,8 +106,9 @@ export default function AccompagnementPage() {
                 </div>
               </div>
             ))}
-          </dl>          <figure className="lg:col-span-12" data-reveal="media">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] bg-sand">
+          </dl>
+          <figure className="lg:col-span-12" data-reveal="media">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-soft)] md:aspect-[21/8]">
               <Image
                 src="/images/bureau-paperboard.jpg"
                 alt="Le bureau de travail avec un paperboard où sont notées les étapes de gestion de la pression"

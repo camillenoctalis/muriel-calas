@@ -34,22 +34,22 @@ export function Pricing({
             <span className={cn("h-px flex-1", dark ? "bg-line-dark" : "bg-line")} />
           </div>
         ))}
-      </div>      <ul className={cn("grid gap-5 lg:gap-6", withQuote ? "md:grid-cols-2 xl:grid-cols-4" : "lg:grid-cols-3")}>
+      </div>
+
+      <ul className={cn("grid gap-5 lg:gap-6", withQuote ? "md:grid-cols-2 xl:grid-cols-4" : "lg:grid-cols-3")}>
         {offers.map((o, i) => (
-          <li
-            key={o.id}
-            id={o.id}
-            data-reveal
-            style={delay(i * 110)}
-            className={cn(
-              "group relative flex scroll-mt-32 flex-col rounded-[var(--radius-card)] border p-7 transition-colors duration-500 md:p-9",
-              dark
-                ? "border-line-dark bg-night/70 hover:border-paper/30"
-                : "border-line bg-paper hover:border-ink/30",
-            )}
-          >
-            {/* Jauge de progression */}
-            <div className="flex gap-1.5" aria-hidden="true">
+          <li key={o.id} id={o.id} data-reveal="card" style={delay(i * 110)} className="flex scroll-mt-32">
+            <div
+              data-spotlight
+              className={cn(
+                "card-lift spotlight group relative flex w-full flex-col rounded-[var(--radius-card)] border p-7 md:p-9",
+                dark
+                  ? "border-line-dark bg-night/70 hover:border-paper/30"
+                  : "border-line bg-paper hover:border-ink/25",
+              )}
+            >
+            {/* Jauge de progression : se remplit à l’apparition de la carte */}
+            <div className="gauge flex gap-1.5" aria-hidden="true">
               {offers.map((_, j) => (
                 <span
                   key={j}
@@ -67,7 +67,13 @@ export function Pricing({
               « {o.intention} »
             </p>
 
-            <div className={cn("mt-8 flex items-end gap-3 border-t pt-7", dark ? "border-line-dark" : "border-line")}>
+            <div
+              className={cn(
+                "mt-8 border-t pt-7",
+                withQuote ? "flex flex-col gap-1.5" : "flex items-end gap-3",
+                dark ? "border-line-dark" : "border-line",
+              )}
+            >
               <span className={cn("numeral text-[3.25rem] leading-none tracking-tight", dark ? "text-paper" : "text-ink")}>
                 {formatPrice(o.price)}
               </span>
@@ -98,18 +104,18 @@ export function Pricing({
                 <span className="sr-only"> — {o.name}</span>
               </BookingButton>
             </div>
+            </div>
           </li>
         ))}
         {withQuote && (
-          <li
-            id={quoteOffer.id}
-            data-reveal
-            style={delay(offers.length * 110)}
-            className={cn(
-              "group relative flex scroll-mt-32 flex-col rounded-[var(--radius-card)] border border-dashed p-7 transition-colors duration-500 md:p-9",
-              dark ? "border-paper/30 bg-night/40 hover:border-paper/50" : "border-ink/25 bg-cream/60 hover:border-ink/40",
-            )}
-          >
+          <li id={quoteOffer.id} data-reveal="card" style={delay(offers.length * 110)} className="flex scroll-mt-32">
+            <div
+              data-spotlight
+              className={cn(
+                "card-lift spotlight group relative flex w-full flex-col rounded-[var(--radius-card)] border border-dashed p-7 md:p-9",
+                dark ? "border-paper/30 bg-night/40 hover:border-paper/50" : "border-ink/25 bg-cream/60 hover:border-ink/45",
+              )}
+            >
             <div className="flex gap-1.5" aria-hidden="true">
               <span className={cn("h-1 flex-1 rounded-full", dark ? "bg-paper/25" : "bg-ink/15")} />
             </div>
@@ -148,6 +154,7 @@ export function Pricing({
               >
                 Demander un devis
               </ButtonLink>
+            </div>
             </div>
           </li>
         )}

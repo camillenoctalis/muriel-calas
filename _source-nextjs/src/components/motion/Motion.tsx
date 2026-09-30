@@ -5,6 +5,8 @@ import { useEffect } from "react";
 
 /**
  * Orchestrateur d’animations, volontairement minimal (aucune librairie) :
+ *  - [data-stagger]  → répartit les délais d’apparition des [data-reveal] qu’il contient
+ *  - [data-magnetic] / [data-spotlight] / [data-pointer] → interactions au pointeur (souris uniquement)
  *  - [data-reveal]   → ajoute .is-in à l’entrée dans le viewport (voir globals.css)
  *  - [data-parallax] → translation verticale très légère liée au scroll (desktop uniquement)
  *  - [data-progress] → expose --progress (0 → 1) selon la traversée de l’élément dans le viewport
@@ -16,13 +18,80 @@ export function Motion() {
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    // Cascade : [data-stagger="80"] répartit les délais de ses [data-reveal]
+    document.querySelectorAll<HTMLElement>("[data-stagger]").forEach((group) => {
+      const step = Number(group.dataset.stagger) || 80;
+      const base = Number(group.dataset.staggerBase) || 0;
+      group.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el, i) => {
+        if (!el.style.getPropertyValue("--delay")) el.style.setProperty("--delay", `${base + i * step}ms`);
+      });
+    });
+
+    // Interactions au pointeur (souris uniquement)
+    const cleanups: Array<() => void> = [];
+    if (finePointer && !reduce) {
+      const onPointer = (
+        selector: string,
+        move: (el: HTMLElement, e: PointerEvent, rect: DOMRect) => void,
+        leave?: (el: HTMLElement) => void,
+      ) => {
+        document.querySelectorAll<HTMLElement>(selector).forEach((el) => {
+          let raf = 0;
+          const handleMove = (e: PointerEvent) => {
+            if (raf) return;
+            raf = requestAnimationFrame(() => {
+              raf = 0;
+              move(el, e, el.getBoundingClientRect());
+            });
+          };
+          const handleLeave = () => leave?.(el);
+          el.addEventListener("pointermove", handleMove);
+          el.addEventListener("pointerleave", handleLeave);
+          cleanups.push(() => {
+            el.removeEventListener("pointermove", handleMove);
+            el.removeEventListener("pointerleave", handleLeave);
+            if (raf) cancelAnimationFrame(raf);
+          });
+        });
+      };
+      const clamp = (v: number, max: number) => Math.max(-max, Math.min(max, v));
+      onPointer(
+        "[data-magnetic]",
+        (el, e, r) => {
+          el.style.setProperty("--mx", `${clamp((e.clientX - (r.left + r.width / 2)) * 0.18, 8).toFixed(1)}px`);
+          el.style.setProperty("--my", `${clamp((e.clientY - (r.top + r.height / 2)) * 0.28, 6).toFixed(1)}px`);
+        },
+        (el) => {
+          el.style.setProperty("--mx", "0px");
+          el.style.setProperty("--my", "0px");
+        },
+      );
+      onPointer("[data-spotlight]", (el, e, r) => {
+        el.style.setProperty("--sx", `${(e.clientX - r.left).toFixed(0)}px`);
+        el.style.setProperty("--sy", `${(e.clientY - r.top).toFixed(0)}px`);
+      });
+      onPointer(
+        "[data-pointer]",
+        (el, e, r) => {
+          el.style.setProperty("--px", (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
+          el.style.setProperty("--py", (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
+        },
+        (el) => {
+          el.style.setProperty("--px", "0");
+          el.style.setProperty("--py", "0");
+        },
+      );
+    }
+
     const reveals = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]:not(.is-in)"));
     const roots = Array.from(document.querySelectorAll<HTMLElement>("[data-progress]"));
 
     if (reduce || !("IntersectionObserver" in window)) {
       reveals.forEach((el) => el.classList.add("is-in"));
       roots.forEach((el) => el.style.setProperty("--progress", "1"));
-      return;
+      return () => cleanups.forEach((fn) => fn());
     }
 
     const io = new IntersectionObserver(
@@ -92,6 +161,7 @@ export function Motion() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
+      cleanups.forEach((fn) => fn());
     };
   }, [pathname]);
 

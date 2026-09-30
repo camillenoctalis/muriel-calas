@@ -2,25 +2,35 @@ import Image from "next/image";
 import { ArrowLink } from "@/components/ui/Button";
 import { delay, Eyebrow, Lines } from "@/components/ui/Typography";
 
-
 export function AboutTeaser() {
   return (
     <section className="section-y relative overflow-hidden" aria-labelledby="muriel-titre">
       <div className="wrap grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-10">
         <div className="relative lg:col-span-5">
-          <figure>
-            <div data-reveal="media" className="relative aspect-[4/3] overflow-hidden lg:aspect-[5/4] rounded-[var(--radius-card)] bg-sand">
-              <div data-parallax="0.06" className="absolute -inset-y-10 inset-x-0">                <Image
-                  src="/images/muriel-terrasse-carnet.jpg"
-                  alt="Muriel Calas assise sur une terrasse en bois, en train d’écrire dans un carnet"
-                  fill
-                  sizes="(min-width: 1024px) 34vw, 92vw"
-                  className="object-cover object-[50%_35%]"
-                />
+          <figure className="relative">
+            <div className="relative">
+              {/* Cadre décalé : un simple trait, pour donner de la profondeur sans effet */}
+              <span
+                aria-hidden="true"
+                data-reveal="fade"
+                style={delay(500)}
+                className="absolute inset-0 hidden translate-x-4 translate-y-4 rounded-[var(--radius-card)] border border-clay/35 sm:block"
+              />
+              <div data-reveal="media" className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-soft)] lg:aspect-[5/4]">
+                <div data-parallax="0.06" className="absolute -inset-y-10 inset-x-0">
+                  <Image
+                    src="/images/muriel-terrasse-carnet.jpg"
+                    alt="Muriel Calas assise sur une terrasse en bois, en train d’écrire dans un carnet"
+                    fill
+                    sizes="(min-width: 1024px) 34vw, 92vw"
+                    className="object-cover object-[50%_35%]"
+                  />
+                </div>
               </div>
             </div>
-            <figcaption className="mt-4 flex items-center gap-3 text-sm text-muted">
-              <span className="h-px w-8 bg-clay" aria-hidden="true" />              Du terrain au bord du terrain : préparer, observer, ajuster.
+            <figcaption className="mt-9 flex items-center gap-3 text-sm text-muted">
+              <span className="h-px w-8 bg-clay" aria-hidden="true" />
+              Du terrain au bord du terrain : préparer, observer, ajuster.
             </figcaption>
           </figure>
         </div>
@@ -37,22 +47,16 @@ export function AboutTeaser() {
               </>,
             ]}
           />
-          <div className="mt-8 grid gap-5 text-muted" data-reveal style={delay(200)}>
-            <p>              Ancienne joueuse de volley-ball et masseur-kinésithérapeute depuis plus de 25 ans, formée à la
-              préparation mentale par Christian Ramos : j’aide chacun à mieux connaître ses capacités, et à s’en
-              servir quand cela compte.
-            </p></div>
+          <p className="measure mt-8 text-muted" data-reveal style={delay(200)}>
+            Ancienne joueuse de volley-ball et masseur-kinésithérapeute depuis plus de 25 ans, formée à la préparation
+            mentale par Christian Ramos : j’aide chacun à mieux connaître ses capacités, et à s’en servir quand cela
+            compte.
+          </p>
 
-
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-6" data-reveal style={delay(300)}>
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-line pt-7" data-reveal style={delay(300)}>
             <div className="flex items-center gap-3">
-              <span className="relative h-12 w-12 overflow-hidden rounded-full bg-sand">                <Image
-                  src="/images/muriel-calas-seance.jpg"
-                  alt=""
-                  fill
-                  sizes="48px"
-                  className="object-cover object-[50%_18%]"
-                />
+              <span className="relative h-12 w-12 overflow-hidden rounded-full bg-sand ring-2 ring-paper shadow-[var(--shadow-soft)]">
+                <Image src="/images/muriel-calas-seance.jpg" alt="" fill sizes="48px" className="object-cover object-[50%_18%]" />
               </span>
               <span className="leading-tight">
                 <span className="block font-serif text-lg text-ink">Muriel Calas</span>

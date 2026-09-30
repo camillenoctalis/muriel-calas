@@ -119,7 +119,7 @@ export function ContactForm() {
           {profiles.map((p, i) => (
             <label key={p} className="cursor-pointer">
               <input type="radio" name="profile" value={p} defaultChecked={i === 0} className="peer sr-only" />
-              <span className="inline-flex min-h-11 items-center rounded-full border border-ink/20 px-4 text-[0.95rem] text-ink transition-colors hover:border-ink/50 peer-checked:border-navy peer-checked:bg-navy peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-clay">
+              <span className="inline-flex min-h-11 items-center rounded-full border border-ink/20 bg-paper px-4 text-[0.95rem] text-ink transition-[color,background-color,border-color,transform] duration-300 ease-[var(--ease-out)] hover:border-ink/50 active:scale-[0.97] peer-checked:border-navy peer-checked:bg-navy peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-clay">
                 {p}
               </span>
             </label>
@@ -190,6 +190,7 @@ export function ContactForm() {
         <button type="submit" disabled={status === "sending"} className={cn("btn btn-primary", status === "sending" && "opacity-70")}>
           <span>{status === "sending" ? "Envoi en cours…" : "Envoyer mon message"}</span>
           <span className="btn-icon">
+            <ArrowRight size={15} />
             <ArrowRight size={15} />
           </span>
         </button>

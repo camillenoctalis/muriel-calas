@@ -109,7 +109,7 @@ export function AudienceTabs() {
                 selected ? "visible opacity-100" : "invisible opacity-0",
               )}
             >
-              <div className="relative aspect-[16/11] overflow-hidden rounded-[var(--radius-card)] bg-sand">
+              <div className="relative aspect-[16/11] overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-soft)]">
                 <Image
                   src={a.image.src}
                   alt={a.image.alt}
@@ -120,11 +120,14 @@ export function AudienceTabs() {
                     selected ? "scale-100" : "scale-[1.06]",
                   )}
                 />
-                <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3.5 py-1.5 text-sm font-medium text-ink backdrop-blur">
+                <span className="absolute left-4 top-4 rounded-full border border-paper/60 bg-paper/85 px-3.5 py-1.5 text-sm font-medium text-ink shadow-[var(--shadow-soft)] backdrop-blur-md">
                   {a.who}
                 </span>
+                <span aria-hidden="true" className="numeral absolute bottom-4 right-4 rounded-full bg-ink/55 px-3 py-1 text-xs text-paper backdrop-blur-md">
+                  {String(i + 1).padStart(2, "0")} / {String(audiences.length).padStart(2, "0")}
+                </span>
               </div>
-              <div className="mt-8 grid gap-6 md:grid-cols-[1fr_auto] md:items-end md:gap-10">
+              <div className="panel-text mt-8 grid gap-6 md:grid-cols-[1fr_auto] md:items-end md:gap-10">
                 <div>
                   <h3 className="display-sm text-ink">{a.question}</h3>
                   <p className="mt-4 max-w-xl text-muted">{a.pitch}</p>
@@ -143,7 +146,7 @@ export function AudienceTabs() {
                   <span>
                     Voir l’accompagnement<span className="sr-only"> des {a.label.toLowerCase()}</span>
                   </span>
-                  <span className="grid h-12 w-12 place-items-center rounded-full bg-navy text-paper transition-colors duration-300 group-hover/cta:bg-ink">
+                  <span className="grid h-12 w-12 place-items-center rounded-full bg-navy text-paper shadow-[0_10px_24px_-14px_rgb(13_27_42/0.6)] transition-[background-color,transform] duration-500 ease-[var(--ease-spring)] group-hover/cta:scale-110 group-hover/cta:bg-ink">
                     <ArrowRight size={18} className="transition-transform duration-500 group-hover/cta:translate-x-0.5" />
                   </span>
                 </Link>

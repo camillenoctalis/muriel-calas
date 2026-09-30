@@ -88,7 +88,7 @@ export default function CyclePage() {
                 d: "S’appuyer sur ses points forts selon les phases, et compenser ce qui manque avec des outils adaptés : récupération, échauffement, activation, retour au calme, concentration.",
               },
             ].map((s, i) => (
-              <div key={s.n} className="rounded-[var(--radius-card)] bg-paper p-7 md:p-10" data-reveal style={delay(i * 100)}>
+              <div key={s.n} data-spotlight className="spotlight rounded-[var(--radius-card)] bg-paper p-7 md:p-10" data-reveal style={delay(i * 100)}>
                 <span className="numeral text-sm text-clay">{s.n}</span>
                 <h3 className="display-sm mt-3 text-ink">{s.t}</h3>
                 <p className="mt-4 text-muted">{s.d}</p>

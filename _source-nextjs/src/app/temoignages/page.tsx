@@ -24,8 +24,8 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, beren
         title={["Ils m’ont", <em key="e" className="accent-italic text-navy">fait confiance.</em>]}
         intro={
           <p>
-            Quelques retours d’expérience de sportifs et d’étudiants accompagnés en préparation mentale. Leurs mots,
-            simplement.
+            Quelques retours d’expérience de sportifs, d’étudiants et d’entraîneurs accompagnés en préparation
+            mentale. Leurs mots, simplement.
           </p>
         }
       />
@@ -33,7 +33,7 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, beren
       <section className="border-t border-line pb-16 pt-12 md:pb-24 md:pt-16" aria-label="Témoignages">
         <div className="wrap grid gap-6 lg:grid-cols-12">
           {/* Ilan — grand format */}
-          <figure className="grid overflow-hidden rounded-[var(--radius-card)] border border-line bg-paper md:grid-cols-2 lg:col-span-8" data-reveal>
+          <figure data-spotlight className="spotlight grid overflow-hidden rounded-[var(--radius-card)] border border-line bg-paper md:grid-cols-2 lg:col-span-8" data-reveal>
             <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[26rem]">
               <Image src={ilan.image.src} alt={ilan.image.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 92vw" className="object-cover object-[55%_40%]" />
             </div>
@@ -53,7 +53,7 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, beren
           </figure>
 
           {/* Matteo — carte sombre */}
-          <figure className="on-dark flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-ink text-paper lg:col-span-4" data-reveal style={delay(120)}>
+          <figure data-spotlight className="spotlight on-dark flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-ink text-paper lg:col-span-4" data-reveal style={delay(120)}>
             <div className="relative aspect-[16/9]">
               <Image src={matteo.image.src} alt={matteo.image.alt} fill sizes="(min-width: 1024px) 30vw, 92vw" className="object-cover opacity-80" />
               <span className="absolute bottom-3 left-3 rounded-full bg-ink/70 px-3 py-1 text-xs text-paper/80 backdrop-blur">
@@ -63,7 +63,7 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, beren
             <div className="flex flex-1 flex-col justify-between gap-8 p-7 md:p-9">
               <span className="chip self-start border-line-dark text-paper/80">{matteo.discipline}</span>
               <blockquote className="font-serif text-[1.35rem] leading-[1.35]">
-                « <QuoteText t={matteo} /> »
+                « <QuoteText t={matteo} /> »
               </blockquote>
               <figcaption>
                 <span className="block font-semibold">{matteo.name}</span>
@@ -71,11 +71,11 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, beren
               </figcaption>
             </div>
           </figure>          {/* Vincent — bandeau */}
-          <figure className="grid gap-8 overflow-hidden rounded-[var(--radius-card)] bg-cream p-7 md:grid-cols-12 md:items-center md:p-12 lg:col-span-12" data-reveal>
+          <figure data-spotlight className="spotlight grid gap-8 overflow-hidden rounded-[var(--radius-card)] bg-cream p-7 md:grid-cols-12 md:items-center md:p-12 lg:col-span-12" data-reveal>
             <div className="md:col-span-8">
               <span className="chip text-ink/80">{vincent.discipline}</span>
               <blockquote className="mt-8 font-serif text-[clamp(1.4rem,1.15rem+1vw,2rem)] leading-[1.3] text-ink">
-                « <QuoteText t={vincent} /> »
+                « <QuoteText t={vincent} /> »
               </blockquote>
               <figcaption className="mt-8">
                 <span className="block font-semibold text-ink">{vincent.name}</span>
@@ -92,13 +92,14 @@ export default function TemoignagesPage() {  const [ilan, matteo, vincent, beren
           {[berenice, solene].map((t, i) => (
             <figure
               key={t.id}
-              className="flex flex-col justify-between gap-8 rounded-[var(--radius-card)] border border-line p-7 md:p-10 lg:col-span-6"
+              data-spotlight
+              className="spotlight flex flex-col justify-between gap-8 rounded-[var(--radius-card)] border border-line p-7 md:p-10 lg:col-span-6"
               data-reveal
               style={delay(i * 100)}
             >
               <span className="chip self-start text-ink/80">{t.discipline}</span>
               <blockquote className="font-serif text-[1.3rem] leading-[1.35] text-ink">
-                « <QuoteText t={t} /> »
+                « <QuoteText t={t} /> »
               </blockquote>
               <figcaption>
                 <span className="block font-semibold text-ink">{t.name}</span>

@@ -16,21 +16,37 @@ export function TestimonialSlider() {
   const [index, setIndex] = useState(0);
   const count = testimonials.length;
 
+  // Témoignage courant déduit du défilement horizontal (chaque diapositive fait la largeur du rail)
   useEffect(() => {
     const el = track.current;
     if (!el) return;
-    const slides = Array.from(el.children) as HTMLElement[];
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting && e.intersectionRatio > 0.6) setIndex(slides.indexOf(e.target as HTMLElement));
-        }
-      },
-      { root: el, threshold: [0.6] },
-    );
-    slides.forEach((s) => io.observe(s));
-    return () => io.disconnect();
-  }, []);
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        setIndex(Math.max(0, Math.min(count - 1, Math.round(el.scrollLeft / el.clientWidth))));
+      });
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [count]);
+
+  // La hauteur suit le témoignage affiché : pas de vide sous les avis courts
+  useEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    const fit = () => {
+      const slide = el.children[index] as HTMLElement | undefined;
+      if (slide) el.style.height = `${slide.offsetHeight}px`;
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, [index]);
 
   const go = useCallback(
     (to: number) => {
@@ -60,7 +76,7 @@ export function TestimonialSlider() {
       <div
         ref={track}
         data-slider-track
-        className="-mx-[var(--gutter)] flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="-mx-[var(--gutter)] flex items-start snap-x snap-mandatory overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth transition-[height] duration-700 ease-[var(--ease-out)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         tabIndex={0}
         aria-label="Faites défiler les témoignages"
       >
@@ -76,7 +92,7 @@ export function TestimonialSlider() {
               <figure className="md:col-span-5">
                 <div
                   className={cn(
-                    "relative overflow-hidden rounded-[var(--radius-card)] bg-sand",
+                    "relative overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-soft)]",
                     "aspect-[16/11] md:aspect-[4/5]",
                   )}
                 >
@@ -140,7 +156,7 @@ export function TestimonialSlider() {
             type="button"
             onClick={() => go(index - 1)}
             data-slider-prev
-            className="grid h-12 w-12 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+            className="grid h-12 w-12 place-items-center rounded-full border border-ink/20 text-ink transition-[color,background-color,border-color,transform] duration-300 ease-[var(--ease-out)] hover:border-ink hover:bg-ink hover:text-paper active:scale-95"
             aria-label="Témoignage précédent"
           >
             <ArrowLeft size={18} />
@@ -149,7 +165,7 @@ export function TestimonialSlider() {
             type="button"
             onClick={() => go(index + 1)}
             data-slider-next
-            className="grid h-12 w-12 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+            className="grid h-12 w-12 place-items-center rounded-full border border-ink/20 text-ink transition-[color,background-color,border-color,transform] duration-300 ease-[var(--ease-out)] hover:border-ink hover:bg-ink hover:text-paper active:scale-95"
             aria-label="Témoignage suivant"
           >
             <ArrowRight size={18} />

@@ -20,6 +20,7 @@ export function FinalCta({
           <Image src="/images/piste-nuit.jpg" alt="" fill sizes="100vw" className="object-cover opacity-25" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(16_35_58/0.55),rgb(13_27_42/0.96)_70%)]" />
+        <div className="absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(217_143_102/0.12),transparent)]" />
       </div>
 
       <div className="wrap-narrow text-center">
@@ -36,8 +37,8 @@ export function FinalCta({
         </p>
         <div className="mt-9 flex flex-col items-center gap-6" data-reveal>
           <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-7">
-            <BookingButton variant="light" />
-            <a href={site.phone.href} className="link-line text-paper">
+            <BookingButton variant="light" magnetic />
+            <a href={site.phone.href} className="link-line text-paper/90 hover:text-paper">
               <Phone size={16} />
               {site.phone.display}
             </a>

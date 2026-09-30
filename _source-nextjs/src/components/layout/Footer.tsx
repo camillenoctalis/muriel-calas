@@ -12,8 +12,7 @@ function Column({ title, children }: { title: string; children: React.ReactNode 
   );
 }
 
-const linkClass =
-  "inline-flex min-h-8 items-center text-[0.95rem] text-paper/85 transition-colors hover:text-paper";
+const linkClass = "link-grow inline-flex min-h-8 items-center text-[0.95rem] text-paper/80 hover:text-paper";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -21,8 +20,8 @@ export function Footer() {
   return (
     <footer id="site-footer" data-hide-cta className="on-dark relative overflow-hidden bg-ink text-paper">
       {/* Colonnes */}
-      <div className="wrap grid gap-10 pb-10 pt-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-4">
+      <div className="wrap grid grid-cols-2 gap-x-6 gap-y-10 pb-10 pt-12 lg:grid-cols-12 lg:gap-8">
+        <div className="col-span-2 lg:col-span-4">
           <Link href="/" className="inline-flex items-center gap-3 text-paper" aria-label="Muriel Calas — accueil">
             <LogoMark className="h-10 w-10" />
             <span className="grid gap-1.5">
@@ -47,7 +46,7 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone size={18} className="mt-1 shrink-0 text-clay-light" />
-              <a href={site.phone.href} className="hover:text-paper">
+              <a href={site.phone.href} className="link-grow hover:text-paper">
                 {site.phone.display}
               </a>
             </li>
@@ -82,7 +81,7 @@ export function Footer() {
           </Column>
         </div>
 
-        <div className="lg:col-span-3">
+        <div className="col-span-2 lg:col-span-3">
           <Column title="Zone d’intervention">
             <p className="text-[0.95rem] leading-relaxed text-paper/85">
               {coverage.region} : {coverage.cities.join(", ")}.
@@ -112,14 +111,17 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-6 gap-y-1">
             {footerNav.legal.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="inline-flex min-h-8 items-center hover:text-paper">
+                <Link href={l.href} className="link-grow inline-flex min-h-8 items-center hover:text-paper">
                   {l.label}
                 </Link>
               </li>
             ))}
             <li>
-              <a href="#contenu" className="inline-flex min-h-8 items-center hover:text-paper">
-                Haut de page ↑
+              <a href="#contenu" className="group inline-flex min-h-8 items-center gap-1.5 hover:text-paper">
+                Haut de page
+                <span aria-hidden="true" className="inline-block transition-transform duration-500 ease-[var(--ease-out)] group-hover:-translate-y-0.5">
+                  ↑
+                </span>
               </a>
             </li>
           </ul>

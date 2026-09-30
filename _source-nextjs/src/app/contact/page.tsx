@@ -13,7 +13,15 @@ export const metadata = pageMetadata({  title: "Contact et rendez-vous | Prépar
 
 export default function ContactPage() {
   return (
-    <section className="pb-24 pt-[calc(var(--header-h)+2rem)] md:pb-32 md:pt-[calc(var(--header-h)+3.5rem)]">
+    <section className="relative isolate overflow-hidden pb-24 pt-[calc(var(--header-h)+2rem)] md:pb-32 md:pt-[calc(var(--header-h)+3.5rem)]">
+      {/* Même profondeur que les autres en-têtes : halo doux et anneaux de focus */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -right-[20%] -top-[30%] h-[56rem] w-[56rem] max-w-none rounded-full bg-[radial-gradient(closest-side,rgb(213_224_234/0.75),transparent)]" />
+        <svg viewBox="0 0 400 400" className="drift absolute -right-40 -top-24 w-[42rem] max-w-none text-ink">
+          <circle cx="200" cy="200" r="198" fill="none" stroke="currentColor" strokeOpacity="0.06" />
+          <circle cx="200" cy="200" r="140" fill="none" stroke="currentColor" strokeOpacity="0.07" strokeDasharray="2 7" />
+        </svg>
+      </div>
       <div className="wrap">
         <Breadcrumbs items={[{ name: "Contact", path: "/contact" }]} className="hero-fade" />
 

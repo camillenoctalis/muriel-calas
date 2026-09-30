@@ -20,10 +20,12 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
 
-  // États au scroll : fond après quelques pixels, masquage en descente, retour en remontée
+  // États au scroll : barre flottante, masquage en descente, retour en remontée, progression de lecture
   useEffect(() => {
     let last = window.scrollY;
     let frame = 0;
@@ -32,25 +34,43 @@ export function Header() {
       frame = requestAnimationFrame(() => {
         frame = 0;
         const y = window.scrollY;
-        setScrolled(y > 16);
+        setScrolled(y > 24);
         if (Math.abs(y - last) > 6) {
-          setHidden(y > last && y > 420);
+          setHidden(y > last && y > 480);
           last = y;
         }
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progressRef.current?.style.setProperty("--scroll", max > 0 ? Math.min(1, y / max).toFixed(4) : "0");
       });
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);
 
-  const close = useCallback(() => {
-    setOpen(false);
-    toggleRef.current?.focus();
+  // Fermeture : le panneau se replie vers le haut avant d’être masqué
+  const dismiss = useCallback(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setOpen(false);
+      return;
+    }
+    setClosing(true);
+    window.setTimeout(() => {
+      setOpen(false);
+      setClosing(false);
+    }, 480);
   }, []);
+
+  const close = useCallback(() => {
+    dismiss();
+    toggleRef.current?.focus();
+  }, [dismiss]);
 
   // Menu mobile : verrouillage du scroll, piège à focus, touche Échap
   useEffect(() => {
@@ -99,21 +119,21 @@ export function Header() {
         Aller au contenu
       </a>
 
+      <div ref={progressRef} data-scroll-progress aria-hidden="true" className="scroll-progress" />
+
       <header
         data-header
-        className={cn(
-          "fixed inset-x-0 top-0 z-40 transition-[transform,background-color,box-shadow] duration-500 ease-[var(--ease-out)]",
-          scrolled ? "bg-paper/88 shadow-[0_1px_0_var(--color-line)] backdrop-blur-xl" : "bg-transparent",
-          hidden && !open ? "-translate-y-full" : "translate-y-0",
-        )}
+        data-scrolled={scrolled ? "true" : "false"}
+        data-hidden={hidden && !open ? "true" : "false"}
+        className="site-header fixed inset-x-0 top-0 z-40"
       >
-        <div className="wrap flex h-[var(--header-h)] items-center justify-between gap-6">
+        <div className="header-bar wrap flex h-[var(--header-h)] items-center justify-between gap-6">
           <Link href="/" className="relative z-10 text-ink" aria-label="Muriel Calas — accueil">
             <Logo markClassName="h-8 w-8 xs:h-9 xs:w-9" wordClassName="h-[1.15rem] xs:h-[1.3rem]" />
           </Link>
 
           <nav aria-label="Navigation principale" className="hidden nav:block">
-            <ul className="flex items-center gap-1">
+            <ul className="flex items-center gap-0.5">
               {mainNav.map((item) => {
                 const active = isActive(item.href);
                 return (
@@ -122,7 +142,7 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "group relative inline-flex h-11 items-center px-3.5 text-[0.95rem] font-medium transition-colors",
+                        "nav-link group relative isolate inline-flex h-11 items-center px-3.5 text-[0.95rem] font-medium transition-colors duration-300",
                         active ? "text-ink" : "text-muted hover:text-ink",
                       )}
                     >
@@ -130,8 +150,8 @@ export function Header() {
                       <span
                         aria-hidden="true"
                         className={cn(
-                          "absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-clay transition-all duration-500",
-                          active ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-60",
+                          "absolute bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-clay transition-[transform,opacity] duration-500 ease-[var(--ease-spring)]",
+                          active ? "scale-100 opacity-100" : "scale-0 opacity-0",
                         )}
                       />
                     </Link>
@@ -158,9 +178,9 @@ export function Header() {
               onClick={() => setOpen(true)}
               aria-expanded={open}
               aria-controls="menu-mobile"
-              className="inline-flex h-11 items-center gap-2 rounded-full border border-ink/15 pl-4 pr-3.5 text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/40 nav:hidden"
+              className="inline-flex h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-ink/15 bg-paper/60 px-3 text-[0.95rem] font-medium text-ink backdrop-blur transition-[border-color,background-color] duration-300 hover:border-ink/40 hover:bg-paper xs:pl-4 xs:pr-3.5 nav:hidden"
             >
-              Menu
+              <span className="max-xs:sr-only">Menu</span>
               <Menu size={20} />
             </button>
           </div>
@@ -177,9 +197,12 @@ export function Header() {
         hidden={!open}
         onClick={(e) => {
           // Fermeture dès qu’un lien est suivi
-          if ((e.target as HTMLElement).closest("a")) setOpen(false);
+          if ((e.target as HTMLElement).closest("a")) dismiss();
         }}
-        className="on-dark fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink text-paper nav:hidden"
+        className={cn(
+          "on-dark fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink text-paper nav:hidden",
+          closing && "is-closing",
+        )}
         style={{ animation: open ? "menu-in 0.7s var(--ease-out) both" : undefined }}
       >
         <div className="wrap flex h-[var(--header-h)] shrink-0 items-center justify-between">
@@ -200,21 +223,25 @@ export function Header() {
         </div>
 
         <nav aria-label="Navigation mobile" className="wrap flex flex-1 flex-col justify-between gap-10 pb-[max(2rem,env(safe-area-inset-bottom))] pt-6">
-          <ul className="grid gap-1">
-            <li className="menu-item" style={{ "--i": 0 } as CSSProperties}>
-              <Link href="/" className="flex items-baseline gap-4 py-2 font-serif text-[2rem] leading-tight" aria-current={pathname === "/" ? "page" : undefined}>
+          <ul className="grid">
+            <li className="menu-item border-b border-line-dark" style={{ "--i": 0 } as CSSProperties}>
+              <Link
+                href="/"
+                className="group flex items-baseline gap-4 py-3 font-serif text-[clamp(1.9rem,7vw,2.5rem)] leading-tight transition-transform duration-500 ease-[var(--ease-out)] active:translate-x-1"
+                aria-current={pathname === "/" ? "page" : undefined}
+              >
                 <span className="numeral w-7 text-sm text-muted-dark">00</span>
                 Accueil
               </Link>
             </li>
             {mainNav.map((item, i) => (
-              <li key={item.href} className="menu-item" style={{ "--i": i + 1 } as CSSProperties}>
+              <li key={item.href} className="menu-item border-b border-line-dark" style={{ "--i": i + 1 } as CSSProperties}>
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={cn(
-                    "flex items-baseline gap-4 py-2 font-serif text-[2rem] leading-tight transition-colors",
-                    isActive(item.href) ? "text-clay-light" : "hover:text-sky",
+                    "flex items-baseline gap-4 py-3 font-serif text-[clamp(1.9rem,7vw,2.5rem)] leading-tight transition-[color,transform] duration-500 ease-[var(--ease-out)] active:translate-x-1",
+                    isActive(item.href) ? "text-clay-light" : "hover:translate-x-1 hover:text-sky",
                   )}
                 >
                   <span className="numeral w-7 text-sm text-muted-dark">{String(i + 1).padStart(2, "0")}</span>

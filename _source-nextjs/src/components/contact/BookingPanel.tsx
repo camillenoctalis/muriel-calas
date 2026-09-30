@@ -32,6 +32,7 @@ export function BookingPanel() {
                 <span>Voir les disponibilités</span>
                 <span className="btn-icon">
                   <ArrowRight size={15} />
+                  <ArrowRight size={15} />
                 </span>
               </button>
               <a href={url} target="_blank" rel="noopener noreferrer" className="link-line text-sm text-paper/85">
@@ -55,6 +56,7 @@ export function BookingPanel() {
           <a href={site.phone.href} className="btn btn-light self-start">
             <span>Appeler le {site.phone.display}</span>
             <span className="btn-icon">
+              <Phone size={15} />
               <Phone size={15} />
             </span>
           </a>

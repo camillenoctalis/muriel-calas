@@ -65,7 +65,18 @@ export function PageHero({
   aside?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden pb-12 pt-[calc(var(--header-h)+1.5rem)] md:pb-16 md:pt-[calc(var(--header-h)+2.5rem)]">
+    <section
+      data-pointer
+      className="relative isolate overflow-hidden pb-12 pt-[calc(var(--header-h)+1.5rem)] md:pb-16 md:pt-[calc(var(--header-h)+2.5rem)]"
+    >
+      {/* Profondeur : halo doux et anneaux de focus, comme sur l’accueil mais plus discrets */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -right-[20%] -top-[35%] h-[56rem] w-[56rem] max-w-none rounded-full bg-[radial-gradient(closest-side,rgb(213_224_234/0.75),transparent)]" />
+        <svg viewBox="0 0 400 400" className="drift absolute -right-40 -top-24 w-[42rem] max-w-none text-ink">
+          <circle cx="200" cy="200" r="198" fill="none" stroke="currentColor" strokeOpacity="0.06" />
+          <circle cx="200" cy="200" r="140" fill="none" stroke="currentColor" strokeOpacity="0.07" strokeDasharray="2 7" />
+        </svg>
+      </div>
       <div className="wrap">
         <Breadcrumbs items={crumbs} className="hero-fade" />
         <div className={cn("mt-8 grid gap-10 md:mt-10", image || aside ? "lg:grid-cols-12 lg:gap-10" : "")}>
@@ -95,8 +106,11 @@ export function PageHero({
             )}
           </div>
           {image && (
-            <figure className="lg:col-span-5">
-              <div className="hero-media relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-sand">
+            <figure
+              className="lg:col-span-5"
+              style={{ transform: "translate3d(calc(var(--px, 0) * -8px), calc(var(--py, 0) * -6px), 0)", transition: "transform 1.2s var(--ease-out)" }}
+            >
+              <div className="hero-media relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-lift)]">
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -107,7 +121,12 @@ export function PageHero({
                   style={{ objectPosition: image.position ?? "50% 50%" }}
                 />
               </div>
-              {image.caption && <figcaption className="mt-3 text-sm text-muted">{image.caption}</figcaption>}
+              {image.caption && (
+                <figcaption className="mt-4 flex items-center gap-3 text-sm text-muted">
+                  <span className="h-px w-8 bg-clay" aria-hidden="true" />
+                  {image.caption}
+                </figcaption>
+              )}
             </figure>
           )}
           {aside && !image && <div className="lg:col-span-5">{aside}</div>}

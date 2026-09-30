@@ -10,7 +10,7 @@ export function PostCard({ post, featured = false, headingLevel = 3 }: { post: P
     <article className="group relative">
       <div
         className={cn(
-          "relative overflow-hidden rounded-[var(--radius-card)] bg-sand",
+          "relative overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-soft)]",
           featured ? "aspect-[16/10]" : "aspect-[4/3]",
         )}
       >

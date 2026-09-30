@@ -15,6 +15,8 @@ type ButtonLinkProps = {
   className?: string;
   external?: boolean;
   ariaLabel?: string;
+  /** Légère attraction du bouton vers le curseur (appels à l’action principaux uniquement) */
+  magnetic?: boolean;
 };
 
 const isExternalHref = (href: string) => /^(https?:)?\/\//.test(href);
@@ -28,18 +30,25 @@ export function ButtonLink({
   className,
   external,
   ariaLabel,
+  magnetic = false,
 }: ButtonLinkProps) {
   const ext = external ?? isExternalHref(href);
   const classes = cn("btn", `btn-${variant}`, size === "sm" && "btn-sm", className);
+  const Icon = ext ? ArrowUpRight : ArrowRight;
   const content = (
     <>
       <span>{children}</span>
       {icon && (
-        <span className="btn-icon">{ext ? <ArrowUpRight size={15} /> : <ArrowRight size={15} />}</span>
+        // Deux flèches : l’une sort, l’autre entre (voir .btn-icon dans globals.css)
+        <span className="btn-icon" data-ext={ext ? "" : undefined}>
+          <Icon size={15} />
+          <Icon size={15} />
+        </span>
       )}
       {ext && <span className="sr-only"> (nouvel onglet)</span>}
     </>
   );
+  const extra = magnetic ? { "data-magnetic": "" } : {};
 
   if (ext || href.startsWith("tel:") || href.startsWith("mailto:")) {
     return (
@@ -47,6 +56,7 @@ export function ButtonLink({
         href={href}
         className={classes}
         aria-label={ariaLabel}
+        {...extra}
         {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {content}
@@ -55,7 +65,7 @@ export function ButtonLink({
   }
 
   return (
-    <Link href={href} className={classes} aria-label={ariaLabel}>
+    <Link href={href} className={classes} aria-label={ariaLabel} {...extra}>
       {content}
     </Link>
   );
