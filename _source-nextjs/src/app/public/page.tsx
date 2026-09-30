@@ -94,8 +94,25 @@ export default function PublicPage() {
             <p className="mt-6 max-w-xl text-muted" data-reveal style={delay(150)}>
               Spécialiste en optimisation du cycle menstruel, j’aide les sportives à observer leur fonctionnement pour
               adapter leur préparation, leur récupération et leur gestion émotionnelle. J’interviens aussi auprès
-              des équipes et des encadrants.
+              des équipes et des encadrants, notamment au sein de la Ligue Occitanie de Rugby.
             </p>
+            <figure
+              className="mt-8 flex items-center gap-5 rounded-[var(--radius-card)] border border-line bg-paper p-5"
+              data-reveal
+              style={delay(200)}
+            >
+              <Image
+                src="/brand/ligue-occitanie-rugby.png"
+                alt="Logo de la Ligue Occitanie de Rugby"
+                width={520}
+                height={391}
+                className="h-16 w-auto"
+              />
+              <figcaption className="text-sm text-muted">
+                Interventions auprès des encadrants et des équipes féminines de la{" "}
+                <span className="font-semibold text-ink">Ligue Occitanie de Rugby</span>.
+              </figcaption>
+            </figure>
           </div>
           <div className="lg:col-span-4 lg:col-start-9 lg:justify-self-end" data-reveal>
             <ButtonLink href="/cycle-menstruel">Découvrir cet accompagnement</ButtonLink>

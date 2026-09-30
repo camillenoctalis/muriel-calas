@@ -26,10 +26,9 @@ export const audiences: Audience[] = [
     pitch:
       "Stress, pression, erreurs dans les moments décisifs… Nous travaillons votre concentration, votre confiance et votre lucidité pour que vous puissiez exprimer votre niveau, en compétition comme à l’entraînement.",
     benefit: "Retrouver de la lucidité quand l’enjeu monte.",
-    focus: ["Stress de compétition", "Confiance", "Concentration", "Visualisation", "Rebondir après l’erreur"],
-    image: {
-      src: "/images/sportif-depart.jpg",
-      alt: "Athlète en position de départ sur une piste d’athlétisme, la main posée sur la ligne",
+    focus: ["Stress de compétition", "Confiance", "Concentration", "Visualisation", "Rebondir après l’erreur"],    image: {
+      src: "/images/sportifs-starting-blocks.jpg",
+      alt: "Pieds d’un sprinteur en pointes, juste derrière les starting-blocks, sur une piste d’athlétisme",
     },
     detail: {
       title: "Sportifs amateurs et confirmés",
