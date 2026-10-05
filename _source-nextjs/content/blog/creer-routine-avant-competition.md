@@ -3,7 +3,7 @@ title: "Sportifs : comment créer une routine avant compétition ?"
 excerpt: "Construire une routine qui vous ressemble, et qui tient même quand l’enjeu monte."
 date: "2026-11-16"
 categories: ["Sport", "Conseils"]
-cover: "/images/sportif-depart.jpg"
+cover: "/images/sportifs-starting-blocks.jpg"
 coverAlt: "Athlète en position de départ sur une piste"
 status: "a-paraitre"
 ---

@@ -5,3 +5,6 @@ _ressources/
 
 # Copies créées par la synchronisation iCloud du Bureau (« index 2.html »)
 * [0-9].*
+
+# Photos d’articles déposées avant intégration
+ARTICLE/
