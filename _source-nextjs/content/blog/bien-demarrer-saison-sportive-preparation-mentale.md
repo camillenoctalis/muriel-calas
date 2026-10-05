@@ -6,7 +6,7 @@ excerpt: "Une saison, c’est long et court à la fois. Objectifs de résultat e
 date: "2026-10-05"
 categories: ["Sport", "Préparation mentale", "Conseils"]
 cover: "/images/preparation-mentale-debut-saison-sportive.jpg"
-coverAlt: "Basketteur en pleine extension vers le panier sur un terrain extérieur, illustration de la préparation mentale en début de saison sportive"
+coverAlt: "Sportif en tenue noire lancé dans une course devant un mur de béton, illustration de la préparation mentale en début de saison sportive"
 status: "publie"
 cta:
   title: "Vous souhaitez préparer votre saison et garder le cap ?"
@@ -77,7 +77,7 @@ Prenez une feuille et tracez une ligne qui représente votre saison. Placez-y vo
 
 ### Transformez un objectif de résultat en objectifs de moyens
 
-Écrivez un objectif de résultat, puis demandez-vous : « Qu’est-ce qui dépend de moi pour m’en rapprocher ? »
+Écrivez un objectif de résultat, puis demandez-vous : « Qu’est-ce qui dépend de moi pour m’en rapprocher ? »
 
 Par exemple, « me qualifier pour les championnats régionaux » peut devenir : deux séances de travail spécifique par semaine, une [routine d’échauffement identique](/blog/gerer-stress-avant-competition) avant chaque compétition, huit heures de sommeil la veille des échéances.
 
@@ -130,7 +130,7 @@ L’objectif de résultat porte sur ce que vous voulez obtenir : un classement,
 
 ### Que faire quand la motivation baisse en milieu de saison ?
 
-C’est normal et prévisible. Appuyez-vous sur votre discipline et sur votre « version minimale » : continuer à faire l’essentiel, même en moins grand. Profitez-en aussi pour faire le point sur vos objectifs : ils ont peut-être besoin d’être réajustés.
+C’est normal et prévisible. Appuyez-vous sur votre discipline et sur votre « version minimale » : continuer à faire l’essentiel, même en moins grand. Profitez-en aussi pour faire le point sur vos objectifs : ils ont peut-être besoin d’être réajustés.
 
 ### Faut-il revoir ses objectifs après une contre-performance ?
 
